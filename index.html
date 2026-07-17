@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Liberty City CHRONICLES — 3D">
+    <meta name="description" content="A GTA III-inspired 3D driving game built with Three.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty City CHRONICLES — 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Three.js mounts here -->
+        <div id="viewport"></div>
+
+        <!-- HUD: Top-left mission banner -->
+        <div id="hud-mission">
+            <div class="hud-label">MISSION</div>
+            <div class="hud-value" id="txt-mission">COURIER DUTY</div>
+        </div>
+
+        <!-- HUD: Top-right speed + timer -->
+        <div id="hud-stats">
+            <div class="stat-box">
+                <span class="hud-label">SPEED</span>
+                <span class="hud-value" id="txt-speed">0 <small>MPH</small></span>
+            </div>
+            <div class="stat-box">
+                <span class="hud-label">TIME</span>
+                <span class="hud-value" id="txt-time">60</span>
+            </div>
+            <div class="stat-box">
+                <span class="hud-label">MISSION</span>
+                <span class="hud-value" id="txt-mission-num">1/4</span>
+            </div>
+        </div>
+
+        <!-- HUD: Bottom-left radar -->
+        <div id="radar-wrap">
+            <canvas id="radar" width="160" height="160"></canvas>
+        </div>
+
+        <!-- HUD: Bottom-right controls hint -->
+        <div id="hud-controls-hint">
+            <span>W</span> Accel &nbsp;  <span>S</span> Reverse &nbsp; <span>A/D</span> Steer &nbsp; <span>SPC</span> Brake
+        </div>
+
+        <!-- Alert toast -->
+        <div id="toast" class="hidden"></div>
+
+        <!-- Settings button (always visible during gameplay) -->
+        <button id="btn-settings" class="hud-btn">âš™ CONTROLS</button>
+
+        <!-- ============ OVERLAYS ============ -->
+
+        <!-- Start screen -->
+        <div id="screen-start" class="overlay active">
+            <div class="panel">
+                <h1 class="title">LIBERTY CITY</h1>
+                <p class="sub">CHRONICLES — 3D</p>
+                <p class="desc">Drive through the gritty streets of Liberty City. Collect packages before time runs out. Complete missions. Collect packages. Don't wreck the car.</p>
+                <button class="btn-main" id="btn-play">PLAY</button>
+            </div>
+        </div>
+
+        <!-- Fail screen -->
+        <div id="screen-fail" class="overlay">
+            <div class="panel">
+                <h1 class="title fail">WASTED</h1>
+                <p class="sub" id="fail-reason">OUT OF TIME</p>
+                <button class="btn-main" id="btn-retry">RETRY</button>
+            </div>
+        </div>
+
+        <!-- Win screen -->
+        <div id="screen-win" class="overlay">
+            <div class="panel">
+                <h1 class="title win">MISSION PASSED</h1>
+                <p class="sub">RESPECT+</p>
+                <p class="desc" id="win-stats"></p>
+                <button class="btn-main" id="btn-next">NEXT MISSION</button>
+            </div>
+        </div>
+
+        <!-- Settings modal -->
+        <div id="screen-settings" class="overlay">
+            <div class="panel narrow">
+                <h2 class="title small">CONTROLS</h2>
+                <p class="sub">Click an action, then press a key to rebind</p>
+                <div class="bind-grid">
+                    <div class="bind-row"><span>Accelerate</span><button class="bind-key" data-action="accelerate">W</button></div>
+                    <div class="bind-row"><span>Brake / Reverse</span><button class="bind-key" data-action="reverse">S</button></div>
+                    <div class="bind-row"><span>Steer Left</span><button class="bind-key" data-action="steerLeft">A</button></div>
+                    <div class="bind-row"><span>Steer Right</span><button class="bind-key" data-action="steerRight">D</button></div>
+                    <div class="bind-row"><span>Handbrake</span><button class="bind-key" data-action="handbrake">Space</button></div>
+                    <div class="bind-row"><span>Horn</span><button class="bind-key" data-action="horn">H</button></div>
+                    <div class="bind-row"><span>Camera</span><button class="bind-key" data-action="cameraToggle">C</button></div>
+                </div>
+                <button class="btn-main" id="btn-close-settings">DONE</button>
+            </div>
+        </div>
+
+        <!-- Rebind listener overlay -->
+        <div id="screen-rebind" class="overlay">
+            <div class="panel narrow">
+                <p class="rebind-prompt">Press any keyâ€¦</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="src/game.js"></script>
+</body>
+</html>
