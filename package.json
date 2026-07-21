@@ -1,0 +1,11 @@
+{
+  "name": "liberty-city-chronicles",
+  "version": "0.6.1",
+  "description": "GTA III-inspired 3D driving game built with Three.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["threejs", "game", "3d", "driving", "gta"],
+  "license": "MIT"
+}

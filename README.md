@@ -1,0 +1,66 @@
+# Liberty City Chronicles
+
+A GTA III-inspired 3D driving game built entirely with Three.js and vanilla JavaScript.
+
+![Liberty City Chronicles](https://img.shields.io/badge/engine-Three.js-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+
+## Features
+
+- **GTA III-style city** — Procedurally generated with brick, concrete, and glass facades
+- **Detailed car model** — Chrome trim, glass windows, working headlights and brake lights
+- **Frame-rate independent physics** — Smooth driving at any refresh rate
+- **NPC traffic** — AI cars driving through the streets
+- **Mission system** — 4 package collection missions with time limits
+- **Minimap radar** — Rotating overhead map with checkpoint markers
+- **Customizable controls** — Rebind any key through the settings menu
+- **Environmental detail** — Trees, fire hydrants, stop signs, traffic lights, dumpsters, benches, utility poles, awnings, and more
+- **GTA III atmosphere** — Hazy overcast sky, distance fog, warm sodium street lights, water surrounding the island city
+
+## Controls
+
+| Key | Action |
+|-----|--------|
+| W | Accelerate |
+| S | Brake / Reverse |
+| A / D | Steer Left / Right |
+| Space | Handbrake |
+| H | Horn |
+| C | Camera Toggle |
+
+## Tech Stack
+
+- **Three.js (r128)** — 3D rendering
+- **Vanilla JS (ES Modules)** — Game logic
+- **Canvas 2D** — Procedural textures and minimap
+- **CSS3** — UI overlay and HUD
+
+## Running Locally
+
+```bash
+# Any static file server will work
+npx serve .
+# Or Python
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080` in your browser.
+
+## Architecture
+
+```
+src/
+  controls.js  — Input manager with rebinding
+  car.js       — Vehicle model, physics, rendering
+  city.js      — Procedural city generator
+  game.js      — Main game loop, camera, missions, HUD
+index.html     — Entry point with UI overlays
+style.css      — GTA III-themed dark UI
+```
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+## License
+
+MIT
