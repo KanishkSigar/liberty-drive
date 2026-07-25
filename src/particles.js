@@ -1,31 +1,40 @@
 // Liberty City Chronicles — Particle Effects
-// Exhaust smoke and collision sparks
+// Exhaust smoke, collision sparks, and tire skid particles
 
 export class ParticleSystem {
     constructor(scene) {
         this.scene = scene;
         this.particles = [];
-        this.maxParticles = 100;
+        this.maxParticles = 150;
     }
 
     emit(x, y, z, type) {
         if (this.particles.length >= this.maxParticles) return;
 
-        const geo = new THREE.SphereGeometry(0.15, 4, 4);
+        let geo;
         let mat;
 
         switch (type) {
             case 'exhaust':
+                geo = new THREE.SphereGeometry(0.2, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0x666666, transparent: true, opacity: 0.3
+                    color: 0x666666, transparent: true, opacity: 0.35
                 });
                 break;
             case 'spark':
+                geo = new THREE.SphereGeometry(0.12, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0xffaa33, transparent: true, opacity: 0.8
+                    color: 0xffbb33, transparent: true, opacity: 0.9
+                });
+                break;
+            case 'skid':
+                geo = new THREE.PlaneGeometry(0.4, 0.4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0x222222, transparent: true, opacity: 0.5, side: THREE.DoubleSide
                 });
                 break;
             default:
+                geo = new THREE.SphereGeometry(0.15, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
                     color: 0x888888, transparent: true, opacity: 0.4
                 });
@@ -33,15 +42,19 @@ export class ParticleSystem {
 
         const mesh = new THREE.Mesh(geo, mat);
         mesh.position.set(x, y, z);
+        if (type === 'skid') {
+            mesh.rotation.x = -Math.PI / 2;
+        }
         this.scene.add(mesh);
 
         this.particles.push({
             mesh,
+            type,
             life: 1.0,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: 0.3 + Math.random() * 0.3,
-            vz: (Math.random() - 0.5) * 0.5,
-            decay: type === 'spark' ? 3.0 : 1.5
+            vx: (Math.random() - 0.5) * (type === 'spark' ? 1.5 : 0.4),
+            vy: type === 'spark' ? (0.5 + Math.random() * 0.8) : (type === 'skid' ? 0 : 0.3 + Math.random() * 0.3),
+            vz: (Math.random() - 0.5) * (type === 'spark' ? 1.5 : 0.4),
+            decay: type === 'spark' ? 3.5 : (type === 'skid' ? 1.0 : 1.5)
         });
     }
 
@@ -52,7 +65,11 @@ export class ParticleSystem {
             p.mesh.position.x += p.vx * dt;
             p.mesh.position.y += p.vy * dt;
             p.mesh.position.z += p.vz * dt;
-            p.mesh.material.opacity = p.life * 0.4;
+            
+            if (p.type === 'exhaust') {
+                p.mesh.scale.multiplyScalar(1 + dt * 1.2);
+            }
+            p.mesh.material.opacity = Math.max(0, p.life * (p.type === 'spark' ? 0.9 : 0.4));
 
             if (p.life <= 0) {
                 this.scene.remove(p.mesh);

@@ -386,10 +386,12 @@ export class Car {
         this.z += Math.cos(this.angle) * moveSpeed;
 
         // Collision
+        let collided = false;
         if (city.hit(this.x, this.z, this.hw, this.hd)) {
             this.x = prevX;
             this.z = prevZ;
             this.speed *= -0.2;
+            collided = true;
         }
 
         // Sync mesh
@@ -408,6 +410,8 @@ export class Car {
         this.brakeLights.forEach(bl => {
             bl.material.color.setHex(this.isBraking ? 0xff3333 : 0xcc2222);
         });
+
+        return collided;
     }
 
     get mph() { return Math.round(Math.abs(this.speed) * 0.6); }
