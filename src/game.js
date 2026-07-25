@@ -1,11 +1,13 @@
-// LibertyDrive3D — Main Game Engine (GTA III atmosphere)
-
 // Liberty City Chronicles — Main Game Engine
 // GTA III-inspired 3D driving game
 
 import { InputManager } from './controls.js';
 import { City } from './city.js';
 import { Car } from './car.js';
+import { TrafficManager } from './traffic.js';
+import { ParticleSystem } from './particles.js';
+import { WeatherSystem } from './weather.js';
+import { HUD } from './hud.js';
 
 /* ── Mission definitions ── */
 const MISSIONS = [
@@ -54,26 +56,30 @@ class Game {
         this.radarCtx = this.radarCv.getContext('2d');
 
         this.input = new InputManager();
+        this.hud = new HUD();
         this.scene = null;
         this.camera = null;
         this.renderer = null;
         this.city = null;
         this.car = null;
+        this.traffic = null;
+        this.particles = null;
+        this.weather = null;
 
         this.state = 'MENU';
         this.missionIdx = 0;
         this.cpIdx = 0;
         this.timeLeft = 0;
         this.cpMeshes = [];
-        this.npcCars = [];
 
         this.rebindAction = null;
         this.lastT = 0;
         this.elapsed = 0;
 
-        // Camera smoothing
+        // Camera smoothing & modes
         this.camPos = new THREE.Vector3(0, 15, -30);
         this.camTarget = new THREE.Vector3();
+        this.camMode = 0; // 0: Normal Chase, 1: Far Chase, 2: Bumper Cam
 
         this._initThree();
         this._bindUI();
@@ -85,7 +91,6 @@ class Game {
     /* ────────── Three.js Setup ────────── */
     _initThree() {
         this.scene = new THREE.Scene();
-        // GTA 3 hazy fog — distance-based
         this.scene.fog = new THREE.Fog(0x6c7c84, 110, 520);
         this.scene.background = new THREE.Color(0x5e6e76);
 
@@ -101,13 +106,10 @@ class Game {
         this.renderer.toneMappingExposure = 0.92;
         this.vp.appendChild(this.renderer.domElement);
 
-        // Ambient — cool overcast
+        // Lights
         this.scene.add(new THREE.AmbientLight(0x556677, 0.42));
-
-        // Hemisphere — sky/ground color bleed
         this.scene.add(new THREE.HemisphereLight(0x8899aa, 0x333322, 0.38));
 
-        // Directional "sun" — hazy overcast sun
         const sun = new THREE.DirectionalLight(0xddccaa, 0.7);
         sun.position.set(100, 200, 80);
         sun.castShadow = true;
@@ -122,12 +124,16 @@ class Game {
         sun.shadow.bias = -0.001;
         this.scene.add(sun);
 
-        // Build city
+        // Build City
         this.city = new City(this.scene);
         this.city.build();
 
-        // Spawn NPC traffic
-        this._spawnNPCs();
+        // Subsystems
+        this.traffic = new TrafficManager(this.scene, this.city);
+        this.traffic.spawn(12);
+
+        this.particles = new ParticleSystem(this.scene);
+        this.weather = new WeatherSystem(this.scene);
 
         // Resize
         window.addEventListener('resize', () => {
@@ -135,93 +141,6 @@ class Game {
             this.camera.aspect = w2 / h2;
             this.camera.updateProjectionMatrix();
             this.renderer.setSize(w2, h2);
-        });
-    }
-
-    /* ────────── NPC Traffic ────────── */
-    _spawnNPCs() {
-        const npcColors = [0x884433, 0x445566, 0x666655, 0x553344, 0x556633, 0x773322, 0x334455];
-        const total = this.city.gridN * this.city.step;
-        const half = total / 2;
-
-        for (let i = 0; i < 10; i++) {
-            const isVertical = Math.random() > 0.5;
-            const laneIdx = Math.floor(Math.random() * (this.city.gridN + 1));
-            const pos = isVertical
-                ? { x: -half + laneIdx * this.city.step + 5, z: -half + Math.random() * total }
-                : { x: -half + Math.random() * total, z: -half + laneIdx * this.city.step + 5 };
-
-            const npc = new THREE.Group();
-            const color = npcColors[Math.floor(Math.random() * npcColors.length)];
-            const mat = new THREE.MeshStandardMaterial({ color, roughness: 0.5, metalness: 0.3 });
-            const dark = new THREE.MeshStandardMaterial({ color: 0x111118, roughness: 0.2 });
-
-            // Simple car shape
-            const body = new THREE.Mesh(new THREE.BoxGeometry(4.5, 1.3, 8.5), mat);
-            body.position.y = 0.95;
-            body.castShadow = true;
-            npc.add(body);
-
-            const cabin = new THREE.Mesh(new THREE.BoxGeometry(4.0, 1.2, 3.5), dark);
-            cabin.position.set(0, 2.2, -0.3);
-            npc.add(cabin);
-
-            // Wheels
-            const wGeo = new THREE.CylinderGeometry(0.55, 0.55, 0.4, 8);
-            wGeo.rotateZ(Math.PI / 2);
-            const wMat = new THREE.MeshStandardMaterial({ color: 0x111111 });
-            [[-2.2, 2.5], [2.2, 2.5], [-2.2, -2.5], [2.2, -2.5]].forEach(([wx, wz]) => {
-                const wheel = new THREE.Mesh(wGeo, wMat);
-                wheel.position.set(wx, 0.55, wz);
-                npc.add(wheel);
-            });
-
-            // Headlights
-            const hlMat = new THREE.MeshBasicMaterial({ color: 0xffeedd });
-            [-1.5, 1.5].forEach(xo => {
-                const hl = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.3, 0.15), hlMat);
-                hl.position.set(xo, 0.95, 4.3);
-                npc.add(hl);
-            });
-
-            // Tail lights
-            const tlMat = new THREE.MeshBasicMaterial({ color: 0xcc2222 });
-            [-1.5, 1.5].forEach(xo => {
-                const tl = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.25, 0.1), tlMat);
-                tl.position.set(xo, 0.95, -4.3);
-                npc.add(tl);
-            });
-
-            npc.position.set(pos.x, 0, pos.z);
-            const angle = isVertical ? 0 : Math.PI / 2;
-            npc.rotation.y = angle + (Math.random() > 0.5 ? Math.PI : 0);
-
-            this.scene.add(npc);
-            this.npcCars.push({
-                mesh: npc,
-                speed: 0.3 + Math.random() * 0.5,
-                angle: npc.rotation.y,
-                vertical: isVertical,
-                laneIdx
-            });
-        }
-    }
-
-    _updateNPCs(dt) {
-        const total = this.city.gridN * this.city.step;
-        const half = total / 2;
-
-        this.npcCars.forEach(npc => {
-            const dx = Math.sin(npc.angle) * npc.speed;
-            const dz = Math.cos(npc.angle) * npc.speed;
-            npc.mesh.position.x += dx;
-            npc.mesh.position.z += dz;
-
-            // Wrap around city
-            if (npc.mesh.position.x > half + 20) npc.mesh.position.x = -half - 15;
-            if (npc.mesh.position.x < -half - 20) npc.mesh.position.x = half + 15;
-            if (npc.mesh.position.z > half + 20) npc.mesh.position.z = -half - 15;
-            if (npc.mesh.position.z < -half - 20) npc.mesh.position.z = half + 15;
         });
     }
 
@@ -255,6 +174,11 @@ class Game {
                 this._refreshBindLabels();
                 e.preventDefault();
                 e.stopPropagation();
+            } else if (this.state === 'PLAY') {
+                if (this.input.wasJustPressed('cameraToggle')) {
+                    this.camMode = (this.camMode + 1) % 3;
+                    this._toast(`CAMERA: ${['CHASE', 'FAR CHASE', 'BUMPER'][this.camMode]}`);
+                }
             }
         });
     }
@@ -283,10 +207,11 @@ class Game {
         const m = MISSIONS[idx];
         this.timeLeft = m.time;
 
-        document.getElementById('txt-mission').textContent = m.title;
-        document.getElementById('txt-mission-num').textContent = (idx + 1) + '/' + MISSIONS.length;
+        this.hud.updateMission(m.title);
+        this.hud.updateMissionCount(idx + 1, MISSIONS.length);
 
         if (this.car) this.car.destroy();
+        this.particles.clear();
         this._clearCPs();
 
         const spawn = this.city.roadCenter(
@@ -295,7 +220,6 @@ class Game {
         );
         this.car = new Car(this.scene, spawn.x, spawn.z, 0);
 
-        // Reset camera instantly behind car
         this.camPos.set(
             this.car.x - Math.sin(this.car.angle) * 22,
             12,
@@ -338,7 +262,7 @@ class Game {
         const arrowMat = new THREE.MeshBasicMaterial({ color: 0xffcc00 });
         const arrow = new THREE.Mesh(arrowGeo, arrowMat);
         arrow.position.set(pt.x, 8, pt.z);
-        arrow.rotation.x = Math.PI; // point down
+        arrow.rotation.x = Math.PI;
         this.scene.add(arrow);
 
         // Light
@@ -354,7 +278,6 @@ class Game {
         const handle = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.2, 0.12), bMat);
         handle.position.y = 0.85;
         pkg.add(handle);
-        // Latches
         const latchMat = new THREE.MeshStandardMaterial({ color: 0xccaa55, metalness: 0.7, roughness: 0.2 });
         [-0.5, 0.5].forEach(xo => {
             const latch = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.1, 0.08), latchMat);
@@ -391,12 +314,13 @@ class Game {
         requestAnimationFrame(this._loop);
         if (!this.lastT) this.lastT = t;
         let dt = (t - this.lastT) / 1000;
-        if (dt > 0.1) dt = 0.016; // cap delta for tab-switch
+        if (dt > 0.1) dt = 0.016;
         this.lastT = t;
         this.elapsed = t;
 
-        // Always update NPCs for background movement
-        this._updateNPCs(dt);
+        this.traffic.update(dt);
+        this.particles.update(dt);
+        this.weather.update(dt);
 
         if (this.state !== 'PLAY') {
             this.renderer.render(this.scene, this.camera);
@@ -408,17 +332,38 @@ class Game {
         if (this.timeLeft <= 0) { this.timeLeft = 0; this._fail('OUT OF TIME'); return; }
 
         // Update car
-        this.car.update(this.input, this.city, dt);
+        const wasCollided = this.car.update(this.input, this.city, dt);
+        if (wasCollided) {
+            this._screenShake = 0.4;
+            // Spawn sparks at car front
+            const sparkX = this.car.x + Math.sin(this.car.angle) * 5;
+            const sparkZ = this.car.z + Math.cos(this.car.angle) * 5;
+            for (let i = 0; i < 5; i++) {
+                this.particles.emit(sparkX, 1.0, sparkZ, 'spark');
+            }
+        }
+
+        // Exhaust smoke while accelerating
+        if (Math.abs(this.car.speed) > 2) {
+            const exX = this.car.x - Math.sin(this.car.angle) * 5.2 + 1.8;
+            const exZ = this.car.z - Math.cos(this.car.angle) * 5.2;
+            if (Math.random() < 0.4) {
+                this.particles.emit(exX, 0.4, exZ, 'exhaust');
+            }
+        }
+
+        // Tire skid smoke during handbrake/tight turns
+        if (this.input.is('handbrake') && Math.abs(this.car.speed) > 15) {
+            this.particles.emit(this.car.x, 0.1, this.car.z, 'skid');
+        }
 
         // Animate checkpoint
         if (this.cpMeshes.length >= 5) {
             const pkg = this.cpMeshes[4];
             pkg.rotation.y += 0.03;
             pkg.position.y = 3.5 + Math.sin(t * 0.004) * 0.5;
-            // Arrow bob
             const arrow = this.cpMeshes[2];
             arrow.position.y = 8 + Math.sin(t * 0.003) * 1.5;
-            // Beacon pulse
             this.cpMeshes[0].material.opacity = 0.12 + 0.08 * Math.sin(t * 0.005);
         }
 
@@ -427,7 +372,9 @@ class Game {
         const cp = m.points[this.cpIdx];
         const dx = this.car.x - cp.x;
         const dz = this.car.z - cp.z;
-        if (Math.sqrt(dx * dx + dz * dz) < 10) {
+        const distToCp = Math.round(Math.sqrt(dx * dx + dz * dz));
+        
+        if (distToCp < 10) {
             this.cpIdx++;
             if (this.cpIdx >= m.points.length) {
                 this._win();
@@ -437,16 +384,24 @@ class Game {
             }
         }
 
-        // ── Camera (GTA III Chase Cam) ──
-        const camDist = 19.5;
-        const camH = 8.8;
-        const camLead = 10;
+        // ── Camera Modes ──
+        let camDist = 19.5;
+        let camH = 8.8;
+        let camLead = 10;
 
-        // Ideal position behind car
+        if (this.camMode === 1) { // Far Chase
+            camDist = 28;
+            camH = 14;
+            camLead = 12;
+        } else if (this.camMode === 2) { // Bumper / Hood
+            camDist = 1.5;
+            camH = 2.2;
+            camLead = 15;
+        }
+
         const idealX = this.car.x - Math.sin(this.car.angle) * camDist;
         const idealZ = this.car.z - Math.cos(this.car.angle) * camDist;
 
-        // Smooth follow with slight lag
         const lerpSpeed = 0.06;
         this.camPos.x += (idealX - this.camPos.x) * lerpSpeed;
         this.camPos.z += (idealZ - this.camPos.z) * lerpSpeed;
@@ -454,26 +409,19 @@ class Game {
 
         this.camera.position.copy(this.camPos);
 
-        // Look ahead of car
         this.camTarget.set(
             this.car.x + Math.sin(this.car.angle) * camLead,
-            2,
+            this.camMode === 2 ? 2.0 : 2.5,
             this.car.z + Math.cos(this.car.angle) * camLead
         );
         this.camera.lookAt(this.camTarget);
 
-        // HUD
-        // Distance to checkpoint
-        const cpDist = Math.round(Math.sqrt(dx * dx + dz * dz));
-        document.getElementById('txt-mission').textContent = MISSIONS[this.missionIdx].title + ' - ' + cpDist + 'm';
+        // HUD updates
+        this.hud.updateMission(m.title, distToCp);
+        this.hud.updateSpeed(this.car.mph);
+        this.hud.updateTime(this.timeLeft);
 
-        document.getElementById('txt-speed').innerHTML = this.car.mph + ' <small>MPH</small>';
-        const timeColor = this.timeLeft < 10 ? '#ff4444' : (this.timeLeft < 20 ? '#ffaa44' : '#f2c744');
-        const timeEl = document.getElementById('txt-time');
-        timeEl.textContent = Math.ceil(this.timeLeft);
-        timeEl.style.color = timeColor;
-
-        // Screen shake effect
+        // Screen shake
         if (this._screenShake && this._screenShake > 0) {
             this._screenShake -= dt;
             const intensity = this._screenShake * 0.5;
@@ -494,7 +442,6 @@ class Game {
 
         ctx.clearRect(0, 0, W, H);
 
-        // Dark background
         ctx.fillStyle = '#0c0c10';
         ctx.beginPath(); ctx.arc(cx, cy, cx, 0, Math.PI * 2); ctx.fill();
 
@@ -538,12 +485,13 @@ class Game {
             }
         }
 
-        // NPC blips (small grey dots)
-        ctx.fillStyle = '#666';
-        this.npcCars.forEach(npc => {
-            const nx = npc.mesh.position.x * scale + offX;
-            const nz = npc.mesh.position.z * scale + offZ;
-            ctx.beginPath(); ctx.arc(nx, nz, 2, 0, Math.PI * 2); ctx.fill();
+        // NPC blips
+        ctx.fillStyle = '#888899';
+        const npcPos = this.traffic.getPositions();
+        npcPos.forEach(p => {
+            const nx = p.x * scale + offX;
+            const nz = p.z * scale + offZ;
+            ctx.beginPath(); ctx.arc(nx, nz, 2.5, 0, Math.PI * 2); ctx.fill();
         });
 
         // Checkpoint blip
