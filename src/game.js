@@ -8,6 +8,7 @@ import { TrafficManager } from './traffic.js';
 import { ParticleSystem } from './particles.js';
 import { WeatherSystem } from './weather.js';
 import { HUD } from './hud.js';
+import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
 const MISSIONS = [
@@ -57,6 +58,7 @@ class Game {
 
         this.input = new InputManager();
         this.hud = new HUD();
+        this.audio = new AudioManager();
         this.scene = null;
         this.camera = null;
         this.renderer = null;
@@ -179,6 +181,9 @@ class Game {
                     this.camMode = (this.camMode + 1) % 3;
                     this._toast(`CAMERA: ${['CHASE', 'FAR CHASE', 'BUMPER'][this.camMode]}`);
                 }
+                if (this.input.wasJustPressed('horn')) {
+                    this.audio.playHorn();
+                }
             }
         });
     }
@@ -298,6 +303,7 @@ class Game {
     _fail(reason) {
         this.state = 'FAIL';
         this._clearCPs();
+        this.audio.stopEngine();
         document.getElementById('fail-reason').textContent = reason;
         this._showScreen('screen-fail');
     }
@@ -305,6 +311,7 @@ class Game {
     _win() {
         this.state = 'WIN';
         this._clearCPs();
+        this.audio.stopEngine();
         document.getElementById('win-stats').textContent = `Time remaining: ${this.timeLeft.toFixed(1)}s`;
         this._showScreen('screen-win');
     }
@@ -323,6 +330,7 @@ class Game {
         this.weather.update(dt);
 
         if (this.state !== 'PLAY') {
+            this.audio.stopEngine();
             this.renderer.render(this.scene, this.camera);
             return;
         }
@@ -331,14 +339,17 @@ class Game {
         this.timeLeft -= dt;
         if (this.timeLeft <= 0) { this.timeLeft = 0; this._fail('OUT OF TIME'); return; }
 
-        // Update car
+        // Update car & audio engine pitch
         const wasCollided = this.car.update(this.input, this.city, dt);
+        this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
+
         if (wasCollided) {
             this._screenShake = 0.4;
+            this.audio.playCrash();
             // Spawn sparks at car front
             const sparkX = this.car.x + Math.sin(this.car.angle) * 5;
             const sparkZ = this.car.z + Math.cos(this.car.angle) * 5;
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 6; i++) {
                 this.particles.emit(sparkX, 1.0, sparkZ, 'spark');
             }
         }
@@ -376,6 +387,7 @@ class Game {
         
         if (distToCp < 10) {
             this.cpIdx++;
+            this.audio.playPickup();
             if (this.cpIdx >= m.points.length) {
                 this._win();
             } else {

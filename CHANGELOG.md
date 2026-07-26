@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.7.0 — Sound Engine & Multi-Cam Release
+- Procedural Web Audio API sound synthesizer engine (`audio.js`)
+- Real-time engine rev audio pitch scaling with vehicle speed
+- Vehicle horn sound on H key, crash impact thud, and package pickup chime
+- Multi-view camera switching (Chase Cam, Far Chase, Bumper/Hood Cam) via C key
+- Particle system integration for exhaust smoke, tire skid marks, and collision sparks
+- Full integration of TrafficManager, WeatherSystem, ParticleSystem, and HUD controllers
+- Enhanced collision detection with visual spark emitters and dynamic audio thud
+
 ## v0.6.0 — Expanded World
 - Expanded city grid to 7x7 blocks
 - Wider roads (26 units) for better driving
@@ -23,14 +32,6 @@
 - Street furniture: dumpsters, benches, newspaper boxes
 - Trees with organic dodecahedron canopies
 - Storm drains and manhole covers
-- Utility poles with insulators
-- Parking meters
-- Chain-link fences
-- Building awnings
-- Fire hydrants
-- Stop signs and street name signs
-- Concrete jersey barriers
-- NPC traffic with 10 AI cars
 
 ## v0.4.0 — Controls Fix
 - Frame-rate independent physics with delta time
