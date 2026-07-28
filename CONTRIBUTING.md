@@ -12,6 +12,8 @@
 ## Commit Convention
 
 We follow Conventional Commits:
+- `tune:` — Physics & audio tuning parameters
+- `style:` — UI and visual styling
 - `feat:` — New features
 - `fix:` — Bug fixes
 - `style:` — Visual changes
