@@ -32,6 +32,7 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 | A / D | Steer Left / Right |
 | Space | Handbrake |
 | H | Horn |
+| C | Toggle Camera View |
 | C | Camera Toggle |
 
 ## Tech Stack
