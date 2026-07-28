@@ -141,7 +141,7 @@ export class AudioManager {
 
         const filter = this.ctx.createBiquadFilter();
         filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(300, now);
+        filter.frequency.setValueAtTime(380, now);
 
         const gain = this.ctx.createGain();
         gain.gain.setValueAtTime(0.3, now);
