@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.8.0 — Audio & Visual Dynamics Release
+- Procedural audio synthesizer additions: gear shift thuds, tire squeals, and mute controls
+- Dynamic vehicle body roll and pitch tilt physics during hard acceleration, braking, and cornering
+- Expanded traffic system with Taxi cabs and expanded color palette
+- Added rooftop billboard advertisements across commercial blocks
+- Added 6th mission: LIBERTY OVERHAUL (6 checkpoints)
+- Gear indicator (R, N, 1-5) integrated into HUD
+- Expanded max particle capacity to 200 with rain particle support
+- Performance and visual polish pass
+
 ## v0.7.0 — Sound Engine & Multi-Cam Release
 - Procedural Web Audio API sound synthesizer engine (`audio.js`)
 - Real-time engine rev audio pitch scaling with vehicle speed
