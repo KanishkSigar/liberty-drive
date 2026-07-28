@@ -92,7 +92,7 @@ export class AudioManager {
         osc1.frequency.setValueAtTime(415, now); // G#4
         osc2.frequency.setValueAtTime(520, now); // C5
 
-        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.setValueAtTime(0.15, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
 
         osc1.connect(gain);
