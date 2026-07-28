@@ -54,15 +54,15 @@ export class AudioManager {
 
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(800 + Math.random() * 200, now);
-        osc.frequency.exponentialRampToValueAtTime(1200, now + 0.15);
+        osc.frequency.exponentialRampToValueAtTime(1200, now + 0.18);
 
         gain.gain.setValueAtTime(0.08, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
 
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start(now);
-        osc.stop(now + 0.15);
+        osc.stop(now + 0.18);
     }
 
     updateEngine(mph, isAccelerating) {
