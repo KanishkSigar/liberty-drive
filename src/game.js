@@ -15,7 +15,7 @@ const MISSIONS = [
     {
         title: 'COURIER RUN',
         desc: 'Drive to the yellow marker and collect the package.',
-        time: 65,
+        time: 70,
         points: [{ x: 90, z: -130 }]
     },
     {
