@@ -154,6 +154,12 @@ export class AudioManager {
         noise.start(now);
     }
 
+    toggleMute() {
+        this.isMuted = !this.isMuted;
+        if (this.isMuted) this.stopEngine();
+        return this.isMuted;
+    }
+
     playPickup() {
         if (!this.initialized || !this.ctx || this.isMuted) return;
         const now = this.ctx.currentTime;
