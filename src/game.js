@@ -27,7 +27,7 @@ const MISSIONS = [
     {
         title: 'DISTRICT DASH',
         desc: 'Three drops, tight deadline. Show what you got.',
-        time: 120,
+        time: 125,
         points: [{ x: 180, z: 180 }, { x: -180, z: -180 }, { x: 0, z: 220 }]
     },
     {
