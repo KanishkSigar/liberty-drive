@@ -21,7 +21,7 @@ export class TrafficManager {
                 ? { x: -half + lane * this.city.step + 5, z: -half + Math.random() * total }
                 : { x: -half + Math.random() * total, z: -half + lane * this.city.step + 5 };
 
-            const npc = this._buildCar(this.colors[i % this.colors.length]);
+            const npc = (i % 4 === 0) ? this._buildTaxi() : this._buildCar(this.colors[i % this.colors.length]);
             npc.position.set(pos.x, 0, pos.z);
             const angle = isVert ? 0 : Math.PI / 2;
             npc.rotation.y = angle + (Math.random() > 0.5 ? Math.PI : 0);
