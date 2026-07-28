@@ -295,8 +295,8 @@ export class Car {
         // Dynamic chassis lean & pitch
         const targetRoll = -this.steer * (this.speed / this.maxSpeed) * 0.18;
         const targetPitch = (this.isBraking ? -0.04 : (input.is('accelerate') ? 0.03 : 0));
-        this.bodyRoll += (targetRoll - this.bodyRoll) * Math.min(1, 10 * dt);
-        this.bodyPitch += (targetPitch - this.bodyPitch) * Math.min(1, 10 * dt);
+        this.bodyRoll += (targetRoll - this.bodyRoll) * Math.min(1, 12 * dt);
+        this.bodyPitch += (targetPitch - this.bodyPitch) * Math.min(1, 12 * dt);
 
         this.mesh.rotation.z = this.bodyRoll;
         this.mesh.rotation.x = this.bodyPitch;
