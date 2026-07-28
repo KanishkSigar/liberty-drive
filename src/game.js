@@ -43,6 +43,19 @@ const MISSIONS = [
         ]
     },
     {
+        title: 'LIBERTY OVERHAUL',
+        desc: 'Six high priority drops across the full city grid. Push it to the limit!',
+        time: 190,
+        points: [
+            { x: -220, z: -220 },
+            { x: 220, z: -220 },
+            { x: 220, z: 220 },
+            { x: -220, z: 220 },
+            { x: 0, z: 0 },
+            { x: 140, z: -140 }
+        ]
+    },
+    {
         title: 'CITYWIDE BLITZ',
         desc: 'Four packages all over Liberty City. Floor it!',
         time: 140,
