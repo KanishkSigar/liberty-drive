@@ -7,7 +7,7 @@ export class TrafficManager {
         this.city = city;
         this.vehicles = [];
         this.carTypes = ["sedan", "van", "taxi"];
-        this.colors = [0x884433, 0x445566, 0x666655, 0x553344, 0x556633, 0x773322, 0x334455, 0x665544, 0x445544, 0x554466];
+        this.colors = [0x884433, 0x445566, 0x666655, 0x553344, 0x556633, 0x773322, 0x334455, 0x665544, 0x445544, 0x554466, 0xd4a017, 0x2b2b2b];
     }
 
     spawn(count) {
