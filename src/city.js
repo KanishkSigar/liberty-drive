@@ -914,6 +914,31 @@ export class City {
         }
     }
 
+    /* ═══════════════ BILLBOARDS ═══════════════ */
+    _billboards() {
+        const total = this.gridN * this.step;
+        const half = total / 2;
+        const boardMat = new THREE.MeshStandardMaterial({ color: 0x1a2b3c, roughness: 0.4 });
+        const frameMat = new THREE.MeshStandardMaterial({ color: 0x333338, metalness: 0.6 });
+
+        for (let r = 0; r < this.gridN; r += 2) {
+            for (let c = 0; c < this.gridN; c += 2) {
+                if (this._rng() > 0.4) continue;
+                const cx = -half + c * this.step + this.roadW + this.blockW / 2;
+                const cz = -half + r * this.step + this.roadW + this.blockW / 2;
+
+                const board = new THREE.Mesh(new THREE.BoxGeometry(16, 8, 0.4), boardMat);
+                board.position.set(cx, 32, cz - 12);
+                board.castShadow = true;
+                this.scene.add(board);
+
+                const frame = new THREE.Mesh(new THREE.BoxGeometry(16.8, 8.8, 0.2), frameMat);
+                frame.position.set(cx, 32, cz - 12.1);
+                this.scene.add(frame);
+            }
+        }
+    }
+
     /* ═══════════════ BUILDING AWNINGS ═══════════════ */
     _awnings() {
         const total = this.gridN * this.step;
