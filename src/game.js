@@ -483,7 +483,7 @@ class Game {
         const half = total / 2;
 
         // Roads
-        ctx.strokeStyle = '#2a2a35';
+        ctx.strokeStyle = "#353545";
         ctx.lineWidth = this.city.roadW * scale;
         for (let i = 0; i <= this.city.gridN; i++) {
             const rx = (-half + i * step) * scale + offX;
