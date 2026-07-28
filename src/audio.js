@@ -7,6 +7,7 @@ export class AudioManager {
         this.engineOsc = null;
         this.engineGain = null;
         this.isMuted = false;
+        this.currentGear = 1;
         this.initialized = false;
 
         // Auto initialize audio context on user interaction
