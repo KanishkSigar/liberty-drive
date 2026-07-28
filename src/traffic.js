@@ -105,7 +105,7 @@ export class TrafficManager {
             v.mesh.position.z += Math.cos(v.angle) * v.speed;
 
             // Wrap
-            if (v.mesh.position.x > half + 20) v.mesh.position.x = -half - 15;
+            if (v.mesh.position.x > half + 25) v.mesh.position.x = -half - 20;
             if (v.mesh.position.x < -half - 20) v.mesh.position.x = half + 15;
             if (v.mesh.position.z > half + 20) v.mesh.position.z = -half - 15;
             if (v.mesh.position.z < -half - 20) v.mesh.position.z = half + 15;
