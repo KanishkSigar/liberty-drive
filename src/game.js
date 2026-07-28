@@ -58,7 +58,7 @@ const MISSIONS = [
     {
         title: 'CITYWIDE BLITZ',
         desc: 'Four packages all over Liberty City. Floor it!',
-        time: 140,
+        time: 145,
         points: [{ x: -200, z: 200 }, { x: 200, z: -200 }, { x: -200, z: -100 }, { x: 200, z: 100 }]
     }
 ];
