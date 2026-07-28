@@ -58,6 +58,7 @@ export class City {
         this._parkingMeters();
         this._fences();
         this._awnings();
+        this._billboards();
         this._hydrants();
         this._stopSigns();
         this._streetSigns();
