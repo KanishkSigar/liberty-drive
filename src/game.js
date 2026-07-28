@@ -536,7 +536,7 @@ class Game {
         ctx.restore();
 
         // Player triangle
-        ctx.fillStyle = '#4488ff';
+        ctx.fillStyle = '#3399ff';
         ctx.strokeStyle = '#fff';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
