@@ -27,6 +27,12 @@ export class ParticleSystem {
                     color: 0xffbb33, transparent: true, opacity: 0.9
                 });
                 break;
+            case 'rain':
+                geo = new THREE.CylinderGeometry(0.02, 0.02, 1.2, 3);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0x99bbdd, transparent: true, opacity: 0.4
+                });
+                break;
             case 'skid':
                 geo = new THREE.PlaneGeometry(0.4, 0.4);
                 mat = new THREE.MeshBasicMaterial({
