@@ -21,7 +21,7 @@ const MISSIONS = [
     {
         title: 'PORT PICKUP',
         desc: 'Two packages across town. Hustle!',
-        time: 90,
+        time: 95,
         points: [{ x: -180, z: 70 }, { x: 120, z: 180 }]
     },
     {
