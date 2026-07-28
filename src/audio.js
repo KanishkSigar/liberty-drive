@@ -72,7 +72,7 @@ export class AudioManager {
         }
 
         // Calculate pitch based on speed
-        const pitch = 55 + (mph * 2.8) + (isAccelerating ? 15 : 0);
+        const pitch = 50 + (mph * 2.6) + (isAccelerating ? 18 : 0);
         const gain = 0.03 + Math.min(0.08, mph * 0.001) + (isAccelerating ? 0.04 : 0);
 
         this.engineOsc.frequency.setTargetAtTime(pitch, this.ctx.currentTime, 0.08);
