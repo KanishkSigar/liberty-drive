@@ -46,6 +46,25 @@ export class AudioManager {
         this.engineOsc.start();
     }
 
+    playSqueal() {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(800 + Math.random() * 200, now);
+        osc.frequency.exponentialRampToValueAtTime(1200, now + 0.15);
+
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.15);
+    }
+
     updateEngine(mph, isAccelerating) {
         if (!this.initialized || !this.ctx || this.isMuted) return;
         if (this.ctx.state === 'suspended') {
