@@ -18,6 +18,8 @@ export class Car {
         this.friction = 19;
         this.handbrakeForce = 235;
         this.steer = 0;
+        this.bodyRoll = 0;
+        this.bodyPitch = 0;
         this.maxSteerRate = 3.1;    // radians per second at low speed
         this.steerSmooth = 11;       // steering return speed
 
