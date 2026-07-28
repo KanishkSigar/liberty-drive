@@ -808,7 +808,7 @@ export class City {
     _barriers() {
         const total = this.gridN * this.step;
         const half = total / 2;
-        const barrierMat = new THREE.MeshStandardMaterial({ color: 0x999995, roughness: 0.9 });
+        const barrierMat = new THREE.MeshStandardMaterial({ color: 0xa0a09c, roughness: 0.9 });
 
         // Place jersey barriers at some road edges
         for (let i = 0; i < 12; i++) {
