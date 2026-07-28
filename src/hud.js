@@ -12,6 +12,18 @@ export class HUD {
         };
     }
 
+    updateGear(speed) {
+        if (!this.elements.gear) return;
+        let g = '1';
+        if (speed === 0) g = 'N';
+        else if (speed < 0) g = 'R';
+        else if (speed > 100) g = '5';
+        else if (speed > 70) g = '4';
+        else if (speed > 45) g = '3';
+        else if (speed > 20) g = '2';
+        this.elements.gear.textContent = g;
+    }
+
     updateSpeed(mph) {
         this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
     }
