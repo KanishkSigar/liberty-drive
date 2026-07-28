@@ -14,7 +14,7 @@ export class Car {
         this.maxSpeed = 135;        // units per second
         this.maxReverse = 50;
         this.accelForce = 105;       // acceleration per second
-        this.brakeForce = 170;
+        this.brakeForce = 180;
         this.friction = 19;
         this.handbrakeForce = 235;
         this.steer = 0;
