@@ -8,6 +8,7 @@ export class HUD {
             time: document.getElementById('txt-time'),
             mission: document.getElementById('txt-mission'),
             missionNum: document.getElementById('txt-mission-num'),
+            gear: document.getElementById('txt-gear'),
         };
     }
 
