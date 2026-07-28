@@ -29,7 +29,7 @@ export class TrafficManager {
             this.scene.add(npc);
             this.vehicles.push({
                 mesh: npc,
-                speed: 0.25 + Math.random() * 0.6,
+                speed: 0.35 + Math.random() * 0.5,
                 angle: npc.rotation.y
             });
         }
