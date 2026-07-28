@@ -647,7 +647,7 @@ export class City {
     _streetLights() {
         const total = this.gridN * this.step;
         const half = total / 2;
-        const poleMat = new THREE.MeshStandardMaterial({ color: 0x4a4a50, roughness: 0.6, metalness: 0.3 });
+        const poleMat = new THREE.MeshStandardMaterial({ color: 0x4a4a50, roughness: 0.55, metalness: 0.35 });
 
         for (let r = 0; r <= this.gridN; r++) {
             for (let c = 0; c <= this.gridN; c++) {
@@ -844,7 +844,7 @@ export class City {
     _stopSigns() {
         const total = this.gridN * this.step;
         const half = total / 2;
-        const poleMat = new THREE.MeshStandardMaterial({ color: 0x888888, roughness: 0.6, metalness: 0.3 });
+        const poleMat = new THREE.MeshStandardMaterial({ color: 0x888888, roughness: 0.55, metalness: 0.35 });
         const signMat = new THREE.MeshStandardMaterial({ color: 0xcc2222, roughness: 0.5 });
         const textMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5 });
 
