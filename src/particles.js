@@ -60,7 +60,7 @@ export class ParticleSystem {
             vx: (Math.random() - 0.5) * (type === 'spark' ? 1.5 : 0.4),
             vy: type === 'spark' ? (0.5 + Math.random() * 0.8) : (type === 'skid' ? 0 : 0.3 + Math.random() * 0.3),
             vz: (Math.random() - 0.5) * (type === 'spark' ? 1.5 : 0.4),
-            decay: type === 'spark' ? 3.5 : (type === 'skid' ? 1.0 : 1.5)
+            decay: type === 'spark' ? 3.8 : (type === 'skid' ? 0.9 : 1.4)
         });
     }
 
