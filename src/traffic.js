@@ -35,6 +35,17 @@ export class TrafficManager {
         }
     }
 
+    _buildTaxi() {
+        const taxi = this._buildCar(0xd4a017);
+        const sign = new THREE.Mesh(
+            new THREE.BoxGeometry(1.2, 0.4, 0.5),
+            new THREE.MeshBasicMaterial({ color: 0xffea00 })
+        );
+        sign.position.set(0, 3.0, -0.3);
+        taxi.add(sign);
+        return taxi;
+    }
+
     _buildCar(color) {
         const npc = new THREE.Group();
         const mat = new THREE.MeshStandardMaterial({ color, roughness: 0.5, metalness: 0.3 });
