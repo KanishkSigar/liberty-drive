@@ -444,6 +444,7 @@ class Game {
         // HUD updates
         this.hud.updateMission(m.title, distToCp);
         this.hud.updateSpeed(this.car.mph);
+        this.hud.updateGear(this.car.speed);
         this.hud.updateTime(this.timeLeft);
 
         // Screen shake
