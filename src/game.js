@@ -33,7 +33,7 @@ const MISSIONS = [
     {
         title: 'COAST TO COAST',
         desc: 'Deliver five packages across the entire island. No time to waste!',
-        time: 180,
+        time: 185,
         points: [
             { x: -250, z: 0 },
             { x: 250, z: 0 },
