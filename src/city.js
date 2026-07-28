@@ -828,7 +828,7 @@ export class City {
     _streetSigns() {
         const total = this.gridN * this.step;
         const half = total / 2;
-        const signMat = new THREE.MeshStandardMaterial({ color: 0x225522, roughness: 0.5 });
+        const signMat = new THREE.MeshStandardMaterial({ color: 0x1e501e, roughness: 0.5 });
 
         for (let r = 0; r <= this.gridN; r += 2) {
             for (let c = 0; c <= this.gridN; c += 2) {
