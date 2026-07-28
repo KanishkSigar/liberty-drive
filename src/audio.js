@@ -89,7 +89,7 @@ export class AudioManager {
         osc1.type = 'triangle';
         osc2.type = 'sawtooth';
 
-        osc1.frequency.setValueAtTime(415, now); // G#4
+        osc1.frequency.setValueAtTime(425, now); // G#4
         osc2.frequency.setValueAtTime(520, now); // C5
 
         gain.gain.setValueAtTime(0.15, now);
