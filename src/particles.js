@@ -72,7 +72,10 @@ export class ParticleSystem {
             p.mesh.position.y += p.vy * dt;
             p.mesh.position.z += p.vz * dt;
             
-            if (p.type === 'exhaust') {
+            if (p.type === 'rain') {
+                p.mesh.position.y -= 35 * dt;
+                if (p.mesh.position.y < 0) p.life = 0;
+            } else if (p.type === 'exhaust') {
                 p.mesh.scale.multiplyScalar(1 + dt * 1.2);
             }
             p.mesh.material.opacity = Math.max(0, p.life * (p.type === 'spark' ? 0.9 : 0.4));
