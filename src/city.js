@@ -120,7 +120,7 @@ export class City {
         waterTex.wrapS = waterTex.wrapT = THREE.RepeatWrapping;
         waterTex.repeat.set(20, 20);
         const waterMat = new THREE.MeshStandardMaterial({
-            map: waterTex, roughness: 0.25, metalness: 0.15, color: 0x1c3848
+            map: waterTex, roughness: 0.22, metalness: 0.18, color: 0x1c3848
         });
         const water = new THREE.Mesh(waterGeo, waterMat);
         water.rotation.x = -Math.PI / 2;
