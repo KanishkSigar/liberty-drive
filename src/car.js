@@ -42,7 +42,7 @@ export class Car {
         const bodyMat = new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.35, metalness: 0.52 });
         const darkMat = new THREE.MeshStandardMaterial({ color: 0x1a1a22, roughness: 0.3, metalness: 0.2 });
         const chromeMat = new THREE.MeshStandardMaterial({ color: 0xb8b8b8, roughness: 0.12, metalness: 0.85 });
-        const glassMat = new THREE.MeshStandardMaterial({ color: 0x1a2535, roughness: 0.05, metalness: 0.3, transparent: true, opacity: 0.65 });
+        const glassMat = new THREE.MeshStandardMaterial({ color: 0x1a2535, roughness: 0.04, metalness: 0.4, transparent: true, opacity: 0.6 });
         const interiorMat = new THREE.MeshStandardMaterial({ color: 0x222228, roughness: 0.9 });
 
         // Main body
