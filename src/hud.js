@@ -56,6 +56,19 @@ export class HUD {
     updateTime(seconds) {
         const el = this.elements.time;
         el.textContent = Math.ceil(seconds);
+        if (seconds < 10) {
+            el.style.color = '#ff4444';
+            el.style.textShadow = '0 0 12px rgba(255,68,68,0.8)';
+        } else if (seconds < 20) {
+            el.style.color = '#ffaa44';
+            el.style.textShadow = '0 0 8px rgba(255,170,68,0.6)';
+        } else {
+            el.style.color = '#f0c540';
+            el.style.textShadow = '0 0 8px rgba(240,197,64,0.4)';
+        }
+    }
+        const el = this.elements.time;
+        el.textContent = Math.ceil(seconds);
         if (seconds < 10) el.style.color = '#ff4444';
         else if (seconds < 20) el.style.color = '#ffaa44';
         else el.style.color = '#f0c540';
