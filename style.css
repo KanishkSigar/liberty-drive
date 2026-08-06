@@ -45,7 +45,7 @@ html, body {
 /* === HUD elements === */
 #hud-mission {
     position:absolute; top:20px; left:20px;
-    background:var(--panel);
+    background:var(--glass-panel);
     border-left:4px solid var(--yellow);
     padding:12px 20px;
     border-radius:0 12px 12px 0;
