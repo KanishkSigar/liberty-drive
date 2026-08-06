@@ -63,7 +63,7 @@ html, body {
 }
 
 .stat-box {
-    background:var(--panel);
+    background:var(--glass-panel);
     border:1px solid var(--glass-border);
     border-radius:10px;
     backdrop-filter:var(--glass-blur);
