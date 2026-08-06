@@ -402,6 +402,7 @@ export class Car {
         // Collision
         let collided = false;
         if (city.hit(this.x, this.z, this.hw, this.hd)) {
+            this.health = Math.max(0, this.health - 4);
             this.x = prevX;
             this.z = prevZ;
             this.speed *= -0.2;
