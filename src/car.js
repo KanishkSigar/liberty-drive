@@ -428,6 +428,7 @@ export class Car {
         return collided;
     }
 
+    get armorRatio() { return Math.max(0, this.health / this.maxHealth); }
     get mph() { return Math.round(Math.abs(this.speed) * 0.6); }
 
     destroy() { this.scene.remove(this.mesh); }
