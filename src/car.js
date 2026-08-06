@@ -26,6 +26,9 @@ export class Car {
         // Collision
         this.hw = 2.8;
         this.hd = 5.2;
+        this.health = 100;
+        this.maxHealth = 100;
+        this.hd = 5.2;
 
         this.mesh = null;
         this.wheels = [];
