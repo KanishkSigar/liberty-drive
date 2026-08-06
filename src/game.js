@@ -550,7 +550,7 @@ class Game {
             const py = pt.z * scale + offZ;
             ctx.fillStyle = '#ffcc00';
             ctx.shadowColor = '#ffcc00';
-            ctx.shadowBlur = 10;
+            ctx.shadowBlur = 12;
             ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
             ctx.shadowBlur = 0;
         }
