@@ -1,6 +1,6 @@
 {
   "name": "liberty-city-chronicles",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "GTA III-inspired 3D driving game built with Three.js",
   "main": "index.html",
   "scripts": {
