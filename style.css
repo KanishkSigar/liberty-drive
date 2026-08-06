@@ -91,7 +91,7 @@ html, body {
 }
 .hud-value small { font-size:10px; color:var(--muted); }
 
-#txt-time { color:var(--yellow); }
+#txt-time { color:#ffe066; }
 
 /* Radar */
 #radar-wrap {
