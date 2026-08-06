@@ -69,7 +69,8 @@ html, body {
     backdrop-filter:var(--glass-blur);
     padding:8px 16px;
     text-align:right;
-    min-width:110px;
+    min-width:115px;
+    transition:transform 0.2s ease, border-color 0.2s ease;
 }
 
 .hud-label {
