@@ -79,7 +79,8 @@ html, body {
     font-size:10.5px;
     letter-spacing:3px;
     color:var(--muted);
-    margin-bottom:2px;
+    margin-bottom:3px;
+    text-transform:uppercase;
 }
 
 .hud-value {
