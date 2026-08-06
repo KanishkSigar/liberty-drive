@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.9.0 — Glassmorphic UI & Dynamics Overhaul
+- Glassmorphic UI design system with backdrop blur filters and gold glow accents
+- Added vehicle armor condition meter with dynamic color transition (Green -> Yellow -> Red)
+- Added live engine RPM gauge bar track to speed stat box
+- Added radar cardinal direction indicators (N, E, S, W) around minimap
+- Added GPS dashed route path line on radar targeting package checkpoints
+- Overhauled Start, Wasted, and Mission Passed overlay panels with badge tags & divider lines
+- Upgraded buttons with metallic gold gradients and elevation hover effects
+- Cyan player radar blip with expanded glow effects
+
 ## v0.8.0 — Audio & Visual Dynamics Release
 - Procedural audio synthesizer additions: gear shift thuds, tire squeals, and mute controls
 - Dynamic vehicle body roll and pitch tilt physics during hard acceleration, braking, and cornering
