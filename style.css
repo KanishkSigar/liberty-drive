@@ -139,7 +139,7 @@ html, body {
     font-family:var(--font-h);
     font-size:10px;
     padding:8px 14px;
-    border-radius:4px;
+    border-radius:6px;
     cursor:pointer;
     z-index:10;
     letter-spacing:1px;
