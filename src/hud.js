@@ -15,6 +15,28 @@ export class HUD {
         };
     }
 
+    updateArmor(healthRatio) {
+        if (!this.elements.healthBar) return;
+        const pct = Math.max(0, Math.min(100, Math.round(healthRatio * 100)));
+        this.elements.healthBar.style.width = pct + '%';
+        if (pct < 30) {
+            this.elements.healthBar.style.background = 'linear-gradient(90deg, #d33, #f50)';
+            this.elements.healthBar.style.boxShadow = '0 0 12px rgba(221,51,51,0.8)';
+        } else if (pct < 65) {
+            this.elements.healthBar.style.background = 'linear-gradient(90deg, #f0c540, #f80)';
+            this.elements.healthBar.style.boxShadow = '0 0 8px rgba(240,197,64,0.6)';
+        } else {
+            this.elements.healthBar.style.background = 'linear-gradient(90deg, #4c4, #8f4)';
+            this.elements.healthBar.style.boxShadow = '0 0 8px rgba(68,204,68,0.5)';
+        }
+    }
+
+    updateRPM(rpmRatio) {
+        if (!this.elements.rpmBar) return;
+        const pct = Math.max(0, Math.min(100, Math.round(rpmRatio * 100)));
+        this.elements.rpmBar.style.width = pct + '%';
+    }
+
     updateGear(speed) {
         if (!this.elements.gear) return;
         let g = '1';
