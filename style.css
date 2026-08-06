@@ -65,7 +65,8 @@ html, body {
 .stat-box {
     background:var(--panel);
     border:1px solid var(--border);
-    border-radius:6px;
+    border-radius:10px;
+    backdrop-filter:var(--glass-blur);
     padding:8px 16px;
     text-align:right;
     min-width:110px;
