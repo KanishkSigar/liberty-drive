@@ -353,7 +353,12 @@ class Game {
         if (this.timeLeft <= 0) { this.timeLeft = 0; this._fail('OUT OF TIME'); return; }
 
         // Update car & audio engine pitch
-        const wasCollided = this.car.update(this.input, this.city, dt);
+        const wasCollided = const wasCollided = this.car.update(this.input, this.city, dt);
+        
+        // Calculate engine RPM ratio for HUD
+        const rpmRatio = Math.min(1.0, (Math.abs(this.car.speed) / this.car.maxSpeed) * 0.85 + (this.input.is('accelerate') ? 0.15 : 0));
+        this.hud.updateRPM(rpmRatio);
+        this.hud.updateArmor(this.car.armorRatio || 1.0);
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
         if (wasCollided) {
