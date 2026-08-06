@@ -6,6 +6,14 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Glassmorphic HUD & UI** — Modern glass panels with backdrop blur, glow accents, armor meter, and RPM gauge
+- **Minimap Radar with GPS & Compass** — Rotating minimap with N/E/S/W compass ring, target GPS route line, and cyan player blip
+- **GTA III-style city** — Procedurally generated with brick, concrete, glass facades, and rooftop billboards
+- **Detailed car model & physics** — Metallic paint, glass windows, dynamic chassis body roll & pitch tilt
+- **Procedural Sound Engine** — Real-time Web Audio synth for engine RPM, tire squeals, gear shifts, horn, and crash thuds
+- **NPC traffic system** — AI sedans and yellow taxi cabs driving through the city grid
+- **Mission system** — 6 package collection missions with dynamic timers
+
 - **GTA III-style city** — Procedurally generated with brick, concrete, glass facades, and rooftop billboards
 - **Detailed car model & physics** — Metallic paint, glass windows, chrome trim, dynamic chassis body roll & pitch tilt
 - **Procedural Sound Engine** — Real-time Web Audio synth for engine RPM, tire squeals, gear shifts, horn, and crash thuds
