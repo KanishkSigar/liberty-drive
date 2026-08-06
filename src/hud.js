@@ -18,6 +18,7 @@ export class HUD {
     updateArmor(healthRatio) {
         if (!this.elements.healthBar) return;
         const pct = Math.max(0, Math.min(100, Math.round(healthRatio * 100)));
+        this.elements.healthBar.title = pct + "% ARMOR";
         this.elements.healthBar.style.width = pct + '%';
         if (pct < 30) {
             this.elements.healthBar.style.background = 'linear-gradient(90deg, #d33, #f50)';
