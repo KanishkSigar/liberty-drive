@@ -77,6 +77,12 @@ export class HUD {
     }
 
     updateMission(title, distance) {
+        if (distance !== undefined) {
+            this.elements.mission.innerHTML = `${title} &bull; <span class="dist-badge">${distance}m</span>`;
+        } else {
+            this.elements.mission.textContent = title;
+        }
+    }
         this.elements.mission.textContent = distance !== undefined
             ? title + ' - ' + distance + 'm'
             : title;
