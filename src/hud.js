@@ -52,6 +52,8 @@ export class HUD {
     updateSpeed(mph) {
         this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
     }
+        this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
+    }
 
     updateTime(seconds) {
         const el = this.elements.time;
