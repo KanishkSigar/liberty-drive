@@ -525,6 +525,23 @@ class Game {
             ctx.beginPath(); ctx.arc(nx, nz, 2.5, 0, Math.PI * 2); ctx.fill();
         });
 
+        // Draw GPS route line to active checkpoint
+        const activeMission = MISSIONS[this.missionIdx];
+        if (activeMission && this.cpIdx < activeMission.points.length) {
+            const targetPt = activeMission.points[this.cpIdx];
+            const targetPx = targetPt.x * scale + offX;
+            const targetPy = targetPt.z * scale + offZ;
+
+            ctx.strokeStyle = 'rgba(240, 197, 64, 0.45)';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([6, 4]);
+            ctx.beginPath();
+            ctx.moveTo(offX, offZ);
+            ctx.lineTo(targetPx, targetPy);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
