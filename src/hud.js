@@ -9,6 +9,9 @@ export class HUD {
             mission: document.getElementById('txt-mission'),
             missionNum: document.getElementById('txt-mission-num'),
             gear: document.getElementById('txt-gear'),
+            healthBar: document.getElementById('hud-health-bar'),
+            rpmBar: document.getElementById('hud-rpm-bar'),
+            gear: document.getElementById('txt-gear'),
         };
     }
 
