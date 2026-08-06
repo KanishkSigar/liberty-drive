@@ -145,6 +145,7 @@ html, body {
     z-index:10;
     letter-spacing:1px;
     transition:all .2s ease-out;
+    box-shadow:var(--gold-glow);
 }
 .hud-btn:hover { color:var(--yellow); border-color:var(--yellow); }
 
