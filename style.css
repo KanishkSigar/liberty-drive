@@ -98,7 +98,7 @@ html, body {
     position:absolute;
     bottom:24px; left:24px;
     width:172px; height:172px;
-    border:3px solid var(--radar-border);
+    border:3px solid var(--radar-border);box-shadow:var(--gold-glow);
     border-radius:50%;
     overflow:hidden;
     background:rgba(0,0,0,0.7);
