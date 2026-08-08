@@ -11,6 +11,7 @@ export class HUD {
             gear: document.getElementById('txt-gear'),
             healthBar: document.getElementById('hud-health-bar'),
             rpmBar: document.getElementById('hud-rpm-bar'),
+            nitroBar: document.getElementById('hud-nitro-bar'),
             gear: document.getElementById('txt-gear'),
         };
     }
