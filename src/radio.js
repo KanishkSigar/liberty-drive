@@ -70,7 +70,7 @@ export class RadioManager {
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(freq, time);
 
-        gain.gain.setValueAtTime(0.04, time);
+        gain.gain.setValueAtTime(0.045, time);
         gain.gain.exponentialRampToValueAtTime(0.001, time + dur);
 
         osc.connect(gain);
