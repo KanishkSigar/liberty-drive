@@ -37,6 +37,16 @@ export class Car {
         this.wheels = [];
         this.brakeLights = [];
         this.isBraking = false;
+        // Nitro management
+        if (input.is('nitro') && this.nitro > 0 && this.speed > 5) {
+            this.isBoosting = true;
+            this.nitro = Math.max(0, this.nitro - dt * 25);
+        } else {
+            this.isBoosting = false;
+            if (!input.is('nitro') && this.nitro < this.maxNitro) {
+                this.nitro = Math.min(this.maxNitro, this.nitro + dt * 8);
+            }
+        }
 
         this._build();
     }
