@@ -378,7 +378,8 @@ export class Car {
         }
 
         // Clamp speed
-        this.speed = Math.max(-this.maxReverse, Math.min(this.maxSpeed, this.speed));
+        const topSpeedCap = this.isBoosting ? 160 : this.maxSpeed;
+        this.speed = Math.max(-this.maxReverse, Math.min(topSpeedCap, this.speed));
 
         // Steering (frame-rate independent)
         let steerInput = 0;
