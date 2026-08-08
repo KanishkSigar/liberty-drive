@@ -202,6 +202,21 @@ class Game {
                 }
                 if (this.input.wasJustPressed('horn')) {
                     this.audio.playHorn();
+                    this.wanted.addHeat(2);
+                }
+                if (this.input.wasJustPressed('radio')) {
+                    if (!this.radio.ctx && this.audio.ctx) this.radio.setAudioContext(this.audio.ctx);
+                    const station = this.radio.toggleStation();
+                    const rEl = document.getElementById('txt-radio-station');
+                    const rWrap = document.getElementById('hud-radio');
+                    if (rEl) rEl.textContent = station.name;
+                    if (rWrap) {
+                        rWrap.classList.remove('hidden');
+                        clearTimeout(this._radioTimer);
+                        this._radioTimer = setTimeout(() => rWrap.classList.add('hidden'), 3500);
+                    }
+                }
+                    this.audio.playHorn();
                 }
             }
         });
