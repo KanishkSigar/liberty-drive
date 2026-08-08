@@ -61,7 +61,7 @@ export class RadioManager {
         }
 
         this.step++;
-        this.timer = setTimeout(() => this._scheduleNote(), 180);
+        this.timer = setTimeout(() => this._scheduleNote(), 175);
     }
 
     _playSynthBass(freq, time, dur) {
