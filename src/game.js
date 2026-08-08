@@ -82,6 +82,8 @@ class Game {
         this.traffic = null;
         this.particles = null;
         this.weather = null;
+        this.wanted = null;
+        this.radio = null;
 
         this.state = 'MENU';
         this.missionIdx = 0;
