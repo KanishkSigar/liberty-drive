@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.0 — Police Pursuit, Radio & Nitro Milestone Release
+- Added Police Wanted Level System (1 to 3 Stars) with crime heat accumulation and active star meter
+- Procedural Web Audio Radio Synthesizer (Flashback FM, Head Radio, Rise FM) on R key
+- Nitro Boost Acceleration System (Shift key) with top speed surge (160 MPH) and cyan exhaust flame particles
+- Dynamic camera speed warp effects during active nitro
+- Added dual-tone sweeping Police Siren audio synthesizer
+- Added Wanted Star HUD meter and Radio station overlay notification
+- Added Nitro fuel gauge bar to HUD stats
+
 ## v0.9.0 — Glassmorphic UI & Dynamics Overhaul
 - Glassmorphic UI design system with backdrop blur filters and gold glow accents
 - Added vehicle armor condition meter with dynamic color transition (Green -> Yellow -> Red)
