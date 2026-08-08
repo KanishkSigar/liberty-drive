@@ -183,6 +183,26 @@ export class AudioManager {
         });
     }
 
+    playSiren() {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(650, now);
+        osc.frequency.linearRampToValueAtTime(950, now + 0.3);
+        osc.frequency.linearRampToValueAtTime(650, now + 0.6);
+
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.6);
+    }
+
     stopEngine() {
         if (this.engineGain && this.ctx) {
             this.engineGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
