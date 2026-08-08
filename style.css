@@ -201,7 +201,7 @@ html, body {
     letter-spacing:5px;
     margin-bottom:4px;
 }
-.title.small { font-size:22px; }
+.title.small { font-size:24px; }
 .title.fail { color:var(--red); }
 .title.win  { color:var(--green); }
 
