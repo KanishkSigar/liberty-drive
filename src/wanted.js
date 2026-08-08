@@ -8,6 +8,7 @@ export class WantedManager {
         this.stars = 0; // 0 to 3 stars
         this.heat = 0; // Heat points (0 to 100)
         this.policeCars = [];
+        this.sirenTimer = 0;
         this.elements = {
             container: document.getElementById('hud-wanted'),
             stars: document.querySelectorAll('.wanted-star')
