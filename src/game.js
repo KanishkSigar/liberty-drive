@@ -365,6 +365,8 @@ class Game {
         const rpmRatio = Math.min(1.0, (Math.abs(this.car.speed) / this.car.maxSpeed) * 0.85 + (this.input.is('accelerate') ? 0.15 : 0));
         this.hud.updateRPM(rpmRatio);
         this.hud.updateArmor(this.car.armorRatio || 1.0);
+        this.hud.updateNitro((this.car.nitro || 0) / (this.car.maxNitro || 100));
+        this.wanted.coolDown(dt);
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
         if (wasCollided) {
