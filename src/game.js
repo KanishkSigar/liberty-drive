@@ -153,6 +153,8 @@ class Game {
 
         this.particles = new ParticleSystem(this.scene);
         this.weather = new WeatherSystem(this.scene);
+        this.wanted = new WantedManager(this.scene, this.city);
+        this.radio = new RadioManager(this.audio.ctx);
 
         // Resize
         window.addEventListener('resize', () => {
