@@ -396,6 +396,13 @@ class Game {
             }
         }
 
+        // Nitro boost flame particle burst
+        if (this.car.isBoosting) {
+            const bx = this.car.x - Math.sin(this.car.angle) * 5.4 + 1.8;
+            const bz = this.car.z - Math.cos(this.car.angle) * 5.4;
+            this.particles.emit(bx, 0.4, bz, 'boost');
+        }
+
         // Exhaust smoke while accelerating
         if (Math.abs(this.car.speed) > 2) {
             const exX = this.car.x - Math.sin(this.car.angle) * 5.2 + 1.8;
