@@ -33,6 +33,12 @@ export class HUD {
         }
     }
 
+    updateNitro(nitroRatio) {
+        if (!this.elements.nitroBar) return;
+        const pct = Math.max(0, Math.min(100, Math.round(nitroRatio * 100)));
+        this.elements.nitroBar.style.width = pct + '%';
+    }
+
     updateRPM(rpmRatio) {
         if (!this.elements.rpmBar) return;
         const pct = Math.max(0, Math.min(100, Math.round(rpmRatio * 100)));
