@@ -370,6 +370,7 @@ class Game {
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
         if (wasCollided) {
+            this.wanted.addHeat(12);
             this._screenShake = 0.4;
             this.audio.playCrash();
             // Spawn sparks at car front
