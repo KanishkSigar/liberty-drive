@@ -6,6 +6,16 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Police Wanted Level System** — 1-3 Stars wanted meter with collision heat accumulation and siren alerts
+- **Procedural Retro Radio** — 3 synthwave/funk/techno stations (Flashback FM, Head Radio, Rise FM) on R key
+- **Nitro Boost System** — High-speed nitrous boost (160 MPH) with blue exhaust flame particles on Shift key
+- **Glassmorphic HUD & UI** — Modern glass panels with armor meter, RPM gauge, and nitro bar
+- **Minimap Radar with GPS & Compass** — Rotating minimap with N/E/S/W compass ring and target GPS route line
+- **GTA III-style city** — Procedurally generated with brick, concrete, glass facades, and rooftop billboards
+- **Detailed car model & physics** — Metallic paint, glass windows, dynamic chassis body roll & pitch tilt
+- **Procedural Sound Engine** — Real-time Web Audio synth for engine RPM, tire squeals, gear shifts, horn, and crash thuds
+- **Mission system** — 6 package collection missions with dynamic timers
+
 - **Glassmorphic HUD & UI (v0.9.0)** — Modern glass panels with backdrop blur, glow accents, armor meter, and RPM gauge
 - **Minimap Radar with GPS & Compass** — Rotating minimap with N/E/S/W compass ring, target GPS route line, and cyan player blip
 - **GTA III-style city** — Procedurally generated with brick, concrete, glass facades, and rooftop billboards
