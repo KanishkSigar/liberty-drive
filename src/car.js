@@ -28,6 +28,9 @@ export class Car {
         this.hd = 5.2;
         this.health = 100;
         this.maxHealth = 100;
+        this.nitro = 100;
+        this.maxNitro = 100;
+        this.isBoosting = false;
         this.hd = 5.2;
 
         this.mesh = null;
