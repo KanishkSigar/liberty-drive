@@ -354,7 +354,8 @@ export class Car {
 
         // Throttle (frame-rate independent)
         if (input.is('accelerate')) {
-            this.speed += this.accelForce * dt;
+            const boostMult = this.isBoosting ? 1.45 : 1.0;
+            this.speed += this.accelForce * boostMult * dt;
         } else if (input.is('reverse')) {
             if (this.speed > 5) {
                 this.speed -= this.brakeForce * dt;
