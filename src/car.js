@@ -444,6 +444,8 @@ export class Car {
         return collided;
     }
 
+    get isCritical() { return this.health < 30; }
+    get isDamaged() { return this.health < 60; }
     get armorRatio() { return Math.max(0, this.health / this.maxHealth); }
     get mph() { return Math.round(Math.abs(this.speed) * 0.6); }
 
