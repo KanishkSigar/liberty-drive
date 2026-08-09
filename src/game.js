@@ -586,6 +586,15 @@ class Game {
             ctx.setLineDash([]);
         }
 
+        // Police radar blips (flashing red/blue dots)
+        const policePos = this.wanted ? this.wanted.getPolicePositions() : [];
+        policePos.forEach(p => {
+            const px = p.x * scale + offX;
+            const pz = p.z * scale + offZ;
+            ctx.fillStyle = (t % 400 < 200) ? '#ff2222' : '#0088ff';
+            ctx.beginPath(); ctx.arc(px, pz, 3.5, 0, Math.PI * 2); ctx.fill();
+        });
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
