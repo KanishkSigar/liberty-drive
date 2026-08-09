@@ -13,7 +13,7 @@ export class Car {
         this.speed = 0;
         this.maxSpeed = vehConfig ? vehConfig.topSpeed : 136;        // units per second
         this.maxReverse = 50;
-        this.accelForce = 108;       // acceleration per second
+        this.accelForce = vehConfig ? vehConfig.accelForce : 108;       // acceleration per second
         this.brakeForce = 180;
         this.friction = 19;
         this.handbrakeForce = 255;
