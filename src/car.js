@@ -3,7 +3,7 @@
 // Frame-rate independent physics with proper delta-time scaling
 
 export class Car {
-    constructor(scene, x, z, angle) {
+    constructor(scene, x, z, angle, vehConfig = null) {
         this.scene = scene;
         this.x = x;
         this.z = z;
