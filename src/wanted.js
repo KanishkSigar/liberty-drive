@@ -8,6 +8,10 @@ export class WantedManager {
         this.stars = 0; // 0 to 3 stars
         this.heat = 0; // Heat points (0 to 100)
         this.policeCars = [];
+    }
+
+    getPolicePositions() {
+        return this.policeCars.map(p => ({ x: p.mesh.position.x, z: p.mesh.position.z }));
         this.sirenTimer = 0;
         this.elements = {
             container: document.getElementById('hud-wanted'),
