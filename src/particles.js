@@ -27,6 +27,18 @@ export class ParticleSystem {
                     color: 0xffbb33, transparent: true, opacity: 0.9
                 });
                 break;
+            case 'damage_smoke':
+                geo = new THREE.SphereGeometry(0.35, 4, 4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0x111111, transparent: true, opacity: 0.65
+                });
+                break;
+            case 'damage_fire':
+                geo = new THREE.SphereGeometry(0.18, 4, 4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0xff4400, transparent: true, opacity: 0.9
+                });
+                break;
             case 'boost':
                 geo = new THREE.ConeGeometry(0.2, 1.2, 4);
                 geo.rotateX(-Math.PI / 2);
