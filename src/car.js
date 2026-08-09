@@ -45,7 +45,7 @@ export class Car {
         } else {
             this.isBoosting = false;
             if (!input.is('nitro') && this.nitro < this.maxNitro) {
-                this.nitro = Math.min(this.maxNitro, this.nitro + dt * 10);
+                this.nitro = Math.min(this.maxNitro, this.nitro + dt * 12);
             }
         }
 
