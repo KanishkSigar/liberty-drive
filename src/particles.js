@@ -30,7 +30,7 @@ export class ParticleSystem {
             case 'damage_smoke':
                 geo = new THREE.SphereGeometry(0.35, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0x111111, transparent: true, opacity: 0.65
+                    color: 0x1a1a1a, transparent: true, opacity: 0.7
                 });
                 break;
             case 'damage_fire':
