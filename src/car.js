@@ -54,7 +54,7 @@ export class Car {
     _build() {
         this.mesh = new THREE.Group();
 
-        const bodyColor = 0x3a5878;
+        const bodyColor = vehConfig ? vehConfig.color : 0x3a5878;
         const bodyMat = new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.35, metalness: 0.52 });
         const darkMat = new THREE.MeshStandardMaterial({ color: 0x1a1a22, roughness: 0.3, metalness: 0.2 });
         const chromeMat = new THREE.MeshStandardMaterial({ color: 0xb8b8b8, roughness: 0.12, metalness: 0.85 });
