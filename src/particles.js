@@ -91,7 +91,12 @@ export class ParticleSystem {
             p.mesh.position.y += p.vy * dt;
             p.mesh.position.z += p.vz * dt;
             
-            if (p.type === 'rain') {
+            if (p.type === 'damage_smoke') {
+                p.mesh.position.y += 1.5 * dt;
+                p.mesh.scale.multiplyScalar(1 + dt * 1.8);
+            } else if (p.type === 'damage_fire') {
+                p.mesh.position.y += 2.0 * dt;
+            } else if (p.type === 'rain') {
                 p.mesh.position.y -= 35 * dt;
                 if (p.mesh.position.y < 0) p.life = 0;
             } else if (p.type === 'exhaust') {
