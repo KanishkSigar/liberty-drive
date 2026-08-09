@@ -92,7 +92,7 @@ export class ParticleSystem {
             p.mesh.position.z += p.vz * dt;
             
             if (p.type === 'damage_smoke') {
-                p.mesh.position.y += 1.5 * dt;
+                p.mesh.position.y += 1.6 * dt;
                 p.mesh.scale.multiplyScalar(1 + dt * 1.8);
             } else if (p.type === 'damage_fire') {
                 p.mesh.position.y += 2.0 * dt;
