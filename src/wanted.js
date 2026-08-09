@@ -63,7 +63,7 @@ export class WantedManager {
         redLight.position.set(-0.9, 2.9, -0.3);
         pGrp.add(redLight);
 
-        const blueLight = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.25, 0.4), new THREE.MeshBasicMaterial({ color: 0x0066ff }));
+        const blueLight = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.25, 0.4), new THREE.MeshBasicMaterial({ color: 0x0088ff }));
         blueLight.position.set(0.9, 2.9, -0.3);
         pGrp.add(blueLight);
 
