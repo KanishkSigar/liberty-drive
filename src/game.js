@@ -284,6 +284,7 @@ class Game {
 
         ['screen-start', 'screen-fail', 'screen-win', 'screen-settings'].forEach(s => this._hideScreen(s));
         this.state = 'PLAY';
+        this.wanted.reset();
         this._toast('GO TO THE MARKER!');
     }
 
