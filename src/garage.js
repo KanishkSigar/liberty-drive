@@ -30,7 +30,7 @@ export const VEHICLE_ROSTER = [
         topSpeed: 142,
         accelForce: 115,
         steerRate: 3.0,
-        armor: 140
+        armor: 150
     }
 ];
 
