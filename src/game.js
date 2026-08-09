@@ -403,6 +403,18 @@ class Game {
             this.particles.emit(bx, 0.4, bz, 'boost');
         }
 
+        // Critical engine damage smoke & fire
+        if (this.car.isDamaged) {
+            const hx = this.car.x + Math.sin(this.car.angle) * 3.8;
+            const hz = this.car.z + Math.cos(this.car.angle) * 3.8;
+            if (Math.random() < 0.6) {
+                this.particles.emit(hx, 1.4, hz, 'damage_smoke');
+            }
+            if (this.car.isCritical && Math.random() < 0.3) {
+                this.particles.emit(hx + (Math.random() - 0.5), 1.2, hz + (Math.random() - 0.5), 'damage_fire');
+            }
+        }
+
         // Exhaust smoke while accelerating
         if (Math.abs(this.car.speed) > 2) {
             const exX = this.car.x - Math.sin(this.car.angle) * 5.2 + 1.8;
