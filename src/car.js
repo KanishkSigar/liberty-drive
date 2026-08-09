@@ -41,7 +41,7 @@ export class Car {
         // Nitro management
         if (input.is('nitro') && this.nitro > 0 && this.speed > 5) {
             this.isBoosting = true;
-            this.nitro = Math.max(0, this.nitro - dt * 25);
+            this.nitro = Math.max(0, this.nitro - dt * 24);
         } else {
             this.isBoosting = false;
             if (!input.is('nitro') && this.nitro < this.maxNitro) {
