@@ -272,7 +272,7 @@ class Game {
             Math.floor(this.city.gridN / 2),
             Math.floor(this.city.gridN / 2)
         );
-        this.car = new Car(this.scene, spawn.x, spawn.z, 0);
+        this.car = new Car(this.scene, spawn.x, spawn.z, 0, this.garage.getSelected());
 
         this.camPos.set(
             this.car.x - Math.sin(this.car.angle) * 22,
