@@ -11,7 +11,7 @@ export class Car {
 
         // Physics constants (per-second values)
         this.speed = 0;
-        this.maxSpeed = 136;        // units per second
+        this.maxSpeed = vehConfig ? vehConfig.topSpeed : 136;        // units per second
         this.maxReverse = 50;
         this.accelForce = 108;       // acceleration per second
         this.brakeForce = 180;
