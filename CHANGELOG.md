@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.0 — Police Pursuit AI & Vehicle Garage Overhaul
+- Added 3 Playable Vehicle Classes: Kuruma Sedan, Stinger Sports Coupe, and Police Enforcer
+- Interactive Garage Carousel selector in Start Screen with live vehicle specs
+- Active AI Police Cruiser Pursuit vehicles spawning at wanted stars with flashing siren bars
+- Dynamic vehicle engine damage smoke & fire ember particle systems
+- Police radar blip indicators (flashing red/blue dots on minimap)
+- Vehicle armor scaling and customized handling profiles per car class
+
 ## v1.0.0 — Police Pursuit, Radio & Nitro Milestone Release
 - Added Police Wanted Level System (1 to 3 Stars) with crime heat accumulation and active star meter
 - Procedural Web Audio Radio Synthesizer (Flashback FM, Head Radio, Rise FM) on R key
