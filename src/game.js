@@ -173,6 +173,18 @@ class Game {
         const $ = id => document.getElementById(id);
 
         $('btn-play').onclick = () => this._startMission(0);
+        
+        const updateGarageUI = (v) => {
+            const nameEl = document.getElementById('txt-veh-name');
+            const descEl = document.getElementById('txt-veh-desc');
+            if (nameEl) nameEl.textContent = v.name;
+            if (descEl) descEl.textContent = v.desc;
+        };
+
+        const prevBtn = $('btn-veh-prev');
+        const nextBtn = $('btn-veh-next');
+        if (prevBtn) prevBtn.onclick = () => updateGarageUI(this.garage.prev());
+        if (nextBtn) nextBtn.onclick = () => updateGarageUI(this.garage.next());
         $('btn-retry').onclick = () => this._startMission(this.missionIdx);
         $('btn-next').onclick = () => {
             const next = this.missionIdx + 1;
