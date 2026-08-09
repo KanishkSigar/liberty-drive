@@ -27,7 +27,7 @@ export const VEHICLE_ROSTER = [
         name: 'POLICE ENFORCER',
         desc: 'Reinforced patrol cruiser with heavy armor and ram power.',
         color: 0x1a1a24,
-        topSpeed: 142,
+        topSpeed: 144,
         accelForce: 115,
         steerRate: 3.0,
         armor: 150
