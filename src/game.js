@@ -382,6 +382,7 @@ class Game {
         this.hud.updateArmor(this.car.armorRatio || 1.0);
         this.hud.updateNitro((this.car.nitro || 0) / (this.car.maxNitro || 100));
         this.wanted.coolDown(dt);
+        this.wanted.updatePursuit(this.car.x, this.car.z, dt);
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
         if (wasCollided) {
