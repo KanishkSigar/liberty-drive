@@ -20,7 +20,7 @@ export class Car {
         this.steer = 0;
         this.bodyRoll = 0;
         this.bodyPitch = 0;
-        this.maxSteerRate = 3.2;    // radians per second at low speed
+        this.maxSteerRate = vehConfig ? vehConfig.steerRate : 3.2;    // radians per second at low speed
         this.steerSmooth = 12;       // steering return speed
 
         // Collision
