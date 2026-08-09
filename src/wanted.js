@@ -13,7 +13,11 @@ export class WantedManager {
     getPolicePositions() {
         return this.policeCars.map(p => ({ x: p.mesh.position.x, z: p.mesh.position.z }));
         this.sirenTimer = 0;
-        this.audio = null;
+        this.audio = audio;
+    }
+
+    setAudio(audio) {
+        this.audio = audio;
         this.elements = {
             container: document.getElementById('hud-wanted'),
             stars: document.querySelectorAll('.wanted-star')
