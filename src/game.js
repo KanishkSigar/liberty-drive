@@ -85,6 +85,7 @@ class Game {
         this.weather = null;
         this.wanted = null;
         this.radio = null;
+        this.garage = new GarageManager();
 
         this.state = 'MENU';
         this.missionIdx = 0;
