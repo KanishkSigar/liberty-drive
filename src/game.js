@@ -401,6 +401,13 @@ class Game {
         this.wanted.updatePursuit(this.car.x, this.car.z, dt);
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
+        // Check destructible prop hit
+        const propHit = this.city.checkPropHit(this.car.x, this.car.z, 2.5);
+        if (propHit && propHit.type === 'hydrant') {
+            this.audio.playSplash();
+            this.activeGeysers.push({ x: propHit.x, z: propHit.z, timer: 6.0 });
+        }
+
         if (wasCollided) {
             this.wanted.addHeat(15);
             this._screenShake = 0.4;
