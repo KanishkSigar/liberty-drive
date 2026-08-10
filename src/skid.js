@@ -8,7 +8,7 @@ export class SkidMarkManager {
         this.maxSkids = 80;
     }
 
-    addSkid(x, z, angle, width = 0.5) {
+    addSkid(x, z, angle, width = 0.55) {
         if (this.skids.length >= this.maxSkids) {
             const old = this.skids.shift();
             this.scene.remove(old.mesh);
