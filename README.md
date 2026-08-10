@@ -6,6 +6,17 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Destructible Street Props** — Fire hydrants knock back on impact and erupt vertical water geysers
+- **Dynamic Road Skid Marks** — Persistent rubber tire mark ribbons laid on asphalt during hard drifts
+- **Mission 3-Star Rating System** — Performance star ratings awarded based on completion speed & vehicle damage
+- **Vehicle Garage Roster** — 3 playable car classes (Kuruma Sedan, Stinger Sports Coupe, Police Enforcer)
+- **AI Police Pursuit System** — Squad cruisers chase and ram player vehicles with flashing siren light bars
+- **Dynamic Vehicle Damage** — Engine bay smoke & flame ember particle emitters at critical armor
+- **Police Wanted Level System** — 1-3 Stars wanted meter with collision heat accumulation
+- **Procedural Retro Radio** — 3 synthwave/funk/techno stations on R key
+- **Nitro Boost System** — High-speed nitrous boost (160 MPH) with blue exhaust flame particles on Shift key
+- **Minimap Radar with GPS & Compass** — Rotating minimap with N/E/S/W compass ring and target GPS line
+
 - **Vehicle Garage Roster** — 3 playable car classes (Kuruma Sedan, Stinger Sports Coupe, Police Enforcer) with unique handling & armor
 - **AI Police Pursuit System** — Cruiser squad cars chase and ram player vehicles with flashing siren light bars at high wanted levels
 - **Dynamic Vehicle Damage** — Engine bay smoke & flame ember particle emitters when vehicle armor drops below critical thresholds
