@@ -87,6 +87,7 @@ class Game {
         this.wanted = null;
         this.radio = null;
         this.garage = new GarageManager();
+        this.skids = new SkidMarkManager(this.scene);
 
         this.state = 'MENU';
         this.missionIdx = 0;
