@@ -132,7 +132,7 @@ export class AudioManager {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(320, now);
         osc.frequency.exponentialRampToValueAtTime(140, now + 0.3);
-        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.setValueAtTime(0.24, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
         osc.connect(gain);
         gain.connect(this.ctx.destination);
