@@ -373,7 +373,15 @@ class Game {
         this.state = 'WIN';
         this._clearCPs();
         this.audio.stopEngine();
-        document.getElementById('win-stats').textContent = `Time remaining: ${this.timeLeft.toFixed(1)}s`;
+        const stars = this._calculateStars();
+        const starEls = document.querySelectorAll('#win-stars .rating-star');
+        if (starEls) {
+            starEls.forEach((el, idx) => {
+                if (idx < stars) el.classList.add('active');
+                else el.classList.remove('active');
+            });
+        }
+        document.getElementById('win-stats').innerHTML = `Time remaining: <strong>${this.timeLeft.toFixed(1)}s</strong> &bull; Rating: <strong>${stars}/3 Stars</strong>`;
         this._showScreen('screen-win');
     }
 
