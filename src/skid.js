@@ -25,7 +25,7 @@ export class SkidMarkManager {
         const mesh = new THREE.Mesh(geo, mat);
         mesh.rotation.x = -Math.PI / 2;
         mesh.rotation.z = angle;
-        mesh.position.set(x, 0.04, z);
+        mesh.position.set(x, 0.05, z);
 
         this.scene.add(mesh);
         this.skids.push({ mesh, life: 8.0 });
