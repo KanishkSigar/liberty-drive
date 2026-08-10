@@ -11,6 +11,7 @@ import { HUD } from './hud.js';
 import { WantedManager } from './wanted.js';
 import { RadioManager } from './radio.js';
 import { GarageManager } from './garage.js';
+import { SkidMarkManager } from './skid.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
