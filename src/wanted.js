@@ -105,8 +105,8 @@ export class WantedManager {
             // Move speed
             const dist = Math.sqrt(dx * dx + dz * dz);
             const chaseSpeed = Math.min(75, 40 + this.stars * 14);
-            p.mesh.position.x += Math.sin(p.angle) * chaseSpeed * dt;
-            p.mesh.position.z += Math.cos(p.angle) * chaseSpeed * dt;
+            p.mesh.position.x += Math.sin(p.angle) * chaseSpeed * 1.05 * dt;
+            p.mesh.position.z += Math.cos(p.angle) * chaseSpeed * 1.05 * dt;
         });
     }
 
