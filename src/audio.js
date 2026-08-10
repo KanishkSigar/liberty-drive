@@ -131,13 +131,13 @@ export class AudioManager {
         const gain = this.ctx.createGain();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(320, now);
-        osc.frequency.exponentialRampToValueAtTime(140, now + 0.3);
+        osc.frequency.exponentialRampToValueAtTime(140, now + 0.35);
         gain.gain.setValueAtTime(0.24, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start(now);
-        osc.stop(now + 0.3);
+        osc.stop(now + 0.35);
     }
 
     playCrash() {
@@ -207,7 +207,7 @@ export class AudioManager {
 
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(650, now);
-        osc.frequency.linearRampToValueAtTime(950, now + 0.3);
+        osc.frequency.linearRampToValueAtTime(950, now + 0.35);
         osc.frequency.linearRampToValueAtTime(650, now + 0.65);
 
         gain.gain.setValueAtTime(0.08, now);
