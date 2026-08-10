@@ -454,6 +454,15 @@ class Game {
         // Tire skid smoke during handbrake/tight turns
         if (this.input.is('handbrake') && Math.abs(this.car.speed) > 15) {
             this.particles.emit(this.car.x, 0.1, this.car.z, 'skid');
+            const offLeftX = this.car.x - Math.cos(this.car.angle) * 1.8;
+            const offLeftZ = this.car.z + Math.sin(this.car.angle) * 1.8;
+            const offRightX = this.car.x + Math.cos(this.car.angle) * 1.8;
+            const offRightZ = this.car.z - Math.sin(this.car.angle) * 1.8;
+            this.skids.addSkid(offLeftX, offLeftZ, this.car.angle);
+            this.skids.addSkid(offRightX, offRightZ, this.car.angle);
+            if (this.audio) this.audio.playSqueal();
+        }
+            this.particles.emit(this.car.x, 0.1, this.car.z, 'skid');
         }
 
         // Animate checkpoint
