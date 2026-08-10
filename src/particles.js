@@ -36,7 +36,7 @@ export class ParticleSystem {
             case 'water_geyser':
                 geo = new THREE.CylinderGeometry(0.1, 0.25, 1.8, 4);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0x88ccff, transparent: true, opacity: 0.75
+                    color: 0x99ddff, transparent: true, opacity: 0.8
                 });
                 break;
             case 'damage_fire':
