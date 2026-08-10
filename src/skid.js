@@ -16,7 +16,7 @@ export class SkidMarkManager {
 
         const geo = new THREE.PlaneGeometry(width, 1.4);
         const mat = new THREE.MeshBasicMaterial({
-            color: 0x111111,
+            color: 0x181818,
             transparent: true,
             opacity: 0.4,
             depthWrite: false
