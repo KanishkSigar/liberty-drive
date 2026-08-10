@@ -268,6 +268,7 @@ class Game {
 
         if (this.car) this.car.destroy();
         this.particles.clear();
+        if (this.skids) this.skids.clear();
         this._clearCPs();
 
         const spawn = this.city.roadCenter(
