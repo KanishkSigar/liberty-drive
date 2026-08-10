@@ -33,6 +33,12 @@ export class ParticleSystem {
                     color: 0x1a1a1a, transparent: true, opacity: 0.7
                 });
                 break;
+            case 'water_geyser':
+                geo = new THREE.CylinderGeometry(0.1, 0.25, 1.8, 4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0x88ccff, transparent: true, opacity: 0.75
+                });
+                break;
             case 'damage_fire':
                 geo = new THREE.SphereGeometry(0.18, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
