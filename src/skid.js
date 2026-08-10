@@ -36,7 +36,7 @@ export class SkidMarkManager {
             const s = this.skids[i];
             s.life -= dt;
             if (s.life < 2.0) {
-                s.mesh.material.opacity = (s.life / 2.0) * 0.4;
+                s.mesh.material.opacity = (s.life / 2.5) * 0.42;
             }
             if (s.life <= 0) {
                 this.scene.remove(s.mesh);
