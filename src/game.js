@@ -361,6 +361,14 @@ class Game {
         this._showScreen('screen-fail');
     }
 
+    _calculateStars() {
+        const m = MISSIONS[this.missionIdx];
+        const timeRatio = this.timeLeft / m.time;
+        if (timeRatio > 0.45 && (this.car.health || 100) > 70) return 3;
+        if (timeRatio > 0.2) return 2;
+        return 1;
+    }
+
     _win() {
         this.state = 'WIN';
         this._clearCPs();
