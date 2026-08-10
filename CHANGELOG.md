@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.0 — Destructible Street Props & Dynamic Skid Marks
+- Destructible Fire Hydrants with vertical pressurized water geyser fountains on collision
+- Dynamic Road Skid Marks (`src/skid.js`) with persistent rubber tire decal ribbons on asphalt
+- Water splash audio synthesizer in Web Audio engine
+- Mission Passed 3-Star Performance Rating System based on remaining time & vehicle health
+- Expanded particle buffer capacity to 300 units
+- Enhanced street furniture materials (dumpsters, newspaper boxes, park benches)
+
 ## v1.1.0 — Police Pursuit AI & Vehicle Garage Overhaul
 - Added 3 Playable Vehicle Classes: Kuruma Sedan, Stinger Sports Coupe, and Police Enforcer
 - Interactive Garage Carousel selector in Start Screen with live vehicle specs
