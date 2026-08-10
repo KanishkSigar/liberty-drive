@@ -379,6 +379,7 @@ class Game {
 
         this.traffic.update(dt);
         this.particles.update(dt);
+        this.skids.update(dt);
         this.weather.update(dt);
 
         if (this.state !== 'PLAY') {
