@@ -239,6 +239,24 @@ export class AudioManager {
         osc.stop(now + 0.25);
     }
 
+    playStunt() {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const notes = [440, 554.37, 659.25, 880];
+        notes.forEach((freq, i) => {
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.06);
+            gain.gain.setValueAtTime(0.12, now + i * 0.06);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.18);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now + i * 0.06);
+            osc.stop(now + i * 0.06 + 0.18);
+        });
+    }
+
     stopEngine() {
         if (this.engineGain && this.ctx) {
             this.engineGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
