@@ -101,7 +101,7 @@ export class PedestrianManager {
             const dz = playerZ - p.z;
             const dist = Math.sqrt(dx * dx + dz * dz);
 
-            if (dist < 18) {
+            if (dist < 20) {
                 p.isPanicking = true;
                 // Move away from car
                 p.x -= (dx / (dist + 0.1)) * (p.speed * 2.8) * dt;
