@@ -560,6 +560,7 @@ class Game {
         this.hud.updateGear(this.car.speed);
         this.hud.updateTime(this.timeLeft);
         if (this.lighting) this.hud.updateClock(this.lighting.getFormattedTime());
+        if (this.stunts) this.stunts.update(this.car.speed, wasCollided, dt);
 
         // Screen shake
         if (this._screenShake && this._screenShake > 0) {
