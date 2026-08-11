@@ -54,6 +54,7 @@ export class PedestrianManager {
         const torso = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.9, 0.45), shirtMat);
         torso.position.y = 1.35;
         torso.castShadow = true;
+        torso.receiveShadow = true;
         ped.add(torso);
 
         // Head
