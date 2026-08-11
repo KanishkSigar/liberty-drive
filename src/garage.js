@@ -17,7 +17,7 @@ export const VEHICLE_ROSTER = [
         name: 'STINGER COUPE',
         desc: 'High acceleration sports car with rapid cornering.',
         color: 0xc82020,
-        topSpeed: 158,
+        topSpeed: 160,
         accelForce: 128,
         steerRate: 3.6,
         armor: 80
