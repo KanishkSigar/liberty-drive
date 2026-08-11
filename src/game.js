@@ -13,6 +13,7 @@ import { RadioManager } from './radio.js';
 import { GarageManager } from './garage.js';
 import { SkidMarkManager } from './skid.js';
 import { PedestrianManager } from './pedestrians.js';
+import { LightingManager } from './lighting.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
