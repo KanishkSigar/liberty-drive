@@ -223,6 +223,10 @@ class Game {
                 if (this.input.wasJustPressed('horn')) {
                     this.audio.playHorn();
                     this.wanted.addHeat(2);
+                    if (this.audio) this.audio.playPedPanic();
+                }
+                    this.audio.playHorn();
+                    this.wanted.addHeat(2);
                 }
                 if (this.input.wasJustPressed('radio')) {
                     if (!this.radio.ctx && this.audio.ctx) this.radio.setAudioContext(this.audio.ctx);
