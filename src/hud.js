@@ -12,6 +12,7 @@ export class HUD {
             healthBar: document.getElementById('hud-health-bar'),
             rpmBar: document.getElementById('hud-rpm-bar'),
             nitroBar: document.getElementById('hud-nitro-bar'),
+            clock: document.getElementById('txt-clock'),
             gear: document.getElementById('txt-gear'),
         };
     }
