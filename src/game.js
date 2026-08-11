@@ -89,6 +89,8 @@ class Game {
         this.radio = null;
         this.garage = new GarageManager();
         this.skids = new SkidMarkManager(this.scene);
+        this.pedestrians = new PedestrianManager(this.scene, this.city);
+        this.pedestrians.spawn(30);
 
         this.state = 'MENU';
         this.missionIdx = 0;
