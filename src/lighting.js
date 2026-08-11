@@ -24,7 +24,7 @@ export class LightingManager {
         // Orbital sun position
         if (this.sun) {
             this.sun.position.x = Math.cos(angle) * 220;
-            this.sun.position.y = Math.sin(angle) * 250;
+            this.sun.position.y = Math.sin(angle) * 260;
             this.sun.position.z = Math.sin(angle * 0.5) * 120;
 
             const isDay = Math.sin(angle) > 0;
