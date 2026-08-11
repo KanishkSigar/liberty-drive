@@ -36,7 +36,7 @@ export class LightingManager {
             const isDay = Math.sin(angle) > 0;
             const ambColor = isDay ? 0x556677 : 0x141824;
             this.ambient.color.setHex(ambColor);
-            this.ambient.intensity = isDay ? 0.42 : 0.18;
+            this.ambient.intensity = isDay ? 0.42 : 0.19;
         }
     }
 
