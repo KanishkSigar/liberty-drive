@@ -666,6 +666,11 @@ export class City {
                     pole.castShadow = true;
                     this.scene.add(pole);
 
+        // Street light head emissive cone
+        const lampGlow = new THREE.PointLight(0xffdd99, 1.2, 28);
+        lampGlow.position.set(cx, 16, cz);
+        this.scene.add(lampGlow);
+
                     // Curved arm
                     const armGeo = new THREE.BoxGeometry(3.5, 0.12, 0.12);
                     const arm = new THREE.Mesh(armGeo, poleMat);
