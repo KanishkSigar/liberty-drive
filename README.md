@@ -6,6 +6,16 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Pedestrian Simulation System** — 30 low-poly animated pedestrians walking sidewalks with panic evasion
+- **Dynamic Celestial Day/Night Cycle** — Sun/moon orbital trajectory with live digital clock HUD display
+- **Insane Stunt Jump Tracker** — Airtime jump distance calculation with neon stunt bonus overlays
+- **Projected Vehicle Headlights** — Real-time spotlight cones illuminating asphalt road surface
+- **Destructible Street Props** — Fire hydrants erupt pressurized water geyser fountains on collision
+- **Dynamic Road Skid Marks** — Persistent rubber tire mark ribbons laid on asphalt during hard drifts
+- **Mission 3-Star Rating System** — Performance star ratings awarded based on completion speed & health
+- **Vehicle Garage Roster** — 3 playable car classes (Kuruma Sedan, Stinger Sports Coupe, Police Enforcer)
+- **AI Police Pursuit System** — Squad cruisers chase and ram player vehicles with flashing siren light bars
+
 - **Destructible Street Props** — Fire hydrants knock back on impact and erupt vertical water geysers
 - **Dynamic Road Skid Marks** — Persistent rubber tire mark ribbons laid on asphalt during hard drifts
 - **Mission 3-Star Rating System** — Performance star ratings awarded based on completion speed & vehicle damage
