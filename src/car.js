@@ -185,7 +185,7 @@ export class Car {
         spotTarget.position.set(0, -2, 50);
         this.mesh.add(spotTarget);
         [-2.0, 2.0].forEach(xo => {
-            const spot = new THREE.SpotLight(0xffeedd, 3.5, 90, Math.PI / 7, 0.45, 1.6);
+            const spot = new THREE.SpotLight(0xfff4e0, 3.5, 90, Math.PI / 7, 0.45, 1.6);
             spot.position.set(xo, 1.15, 5.35);
             spot.target = spotTarget;
             this.mesh.add(spot);
@@ -292,7 +292,7 @@ export class Car {
         this.mesh.add(ant);
 
         // Projected Headlight Cones
-        const hlSpot = new THREE.SpotLight(0xffeedd, 1.8, 45, Math.PI / 6, 0.4);
+        const hlSpot = new THREE.SpotLight(0xfff4e0, 1.8, 45, Math.PI / 6, 0.4);
         hlSpot.position.set(0, 1.2, 4.5);
         hlSpot.target.position.set(0, 0, 30);
         this.mesh.add(hlSpot);
