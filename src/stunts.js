@@ -14,7 +14,7 @@ export class StuntManager {
         // Airborne detection: high speed without ground resistance
         if (Math.abs(carSpeed) > 70 && !isCollided && Math.random() < 0.1) {
             this.airtime += dt;
-            if (this.airtime > 0.4) {
+            if (this.airtime > 0.35) {
                 this.isAirborne = true;
                 this._showStuntBanner();
             }
