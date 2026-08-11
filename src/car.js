@@ -290,6 +290,13 @@ export class Car {
         ant.rotation.z = 0.15;
         this.mesh.add(ant);
 
+        // Projected Headlight Cones
+        const hlSpot = new THREE.SpotLight(0xffeedd, 1.8, 45, Math.PI / 6, 0.4);
+        hlSpot.position.set(0, 1.2, 4.5);
+        hlSpot.target.position.set(0, 0, 30);
+        this.mesh.add(hlSpot);
+        this.mesh.add(hlSpot.target);
+
         // Wheel well arches
         const archMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1e, roughness: 0.8 });
         [3.3, -3.3].forEach(zpos => {
