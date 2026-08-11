@@ -31,7 +31,7 @@ export class PedestrianManager {
                 mesh: pedMesh,
                 x: cx,
                 z: cz,
-                speed: 1.2 + Math.random() * 0.8,
+                speed: 1.4 + Math.random() * 0.9,
                 dir: isHorizontal ? (Math.random() > 0.5 ? 1 : -1) : 0,
                 dirZ: !isHorizontal ? (Math.random() > 0.5 ? 1 : -1) : 0,
                 animTimer: Math.random() * Math.PI,
