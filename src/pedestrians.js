@@ -7,7 +7,7 @@ export class PedestrianManager {
         this.city = city;
         this.pedestrians = [];
         this.panicScreamed = false;
-        this.clothingColors = [0xd4a017, 0x111111, 0x0088cc, 0x3a5878, 0x884433, 0x446644, 0x775533, 0x2b2b2b, 0x553355, 0x666655];
+        this.clothingColors = [0xd4a017, 0x111111, 0x0088cc, 0x3a5878, 0x884433, 0.4246644, 0x775533, 0x2b2b2b, 0x553355, 0x666655];
     }
 
     spawn(count = 24) {
@@ -52,35 +52,35 @@ export class PedestrianManager {
         const pantsMat = new THREE.MeshStandardMaterial({ color: 0x1f2430, roughness: 0.8 });
 
         // Torso
-        const torso = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.9, 0.45), shirtMat);
+        const torso = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.9, 0.425), shirtMat);
         torso.position.y = 1.35;
         torso.castShadow = true;
         torso.receiveShadow = true;
         ped.add(torso);
 
         // Head
-        const head = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.45, 0.45), skinMat);
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.425, 0.425, 0.425), skinMat);
         head.position.y = 2.05;
         ped.add(head);
 
         // Legs
         const legGeo = new THREE.BoxGeometry(0.28, 0.9, 0.35);
         const leftLeg = new THREE.Mesh(legGeo, pantsMat);
-        leftLeg.position.set(-0.2, 0.45, 0);
+        leftLeg.position.set(-0.2, 0.425, 0);
         ped.add(leftLeg);
 
         const rightLeg = new THREE.Mesh(legGeo, pantsMat);
-        rightLeg.position.set(0.2, 0.45, 0);
+        rightLeg.position.set(0.2, 0.425, 0);
         ped.add(rightLeg);
 
         // Arms
         const armGeo = new THREE.BoxGeometry(0.2, 0.75, 0.25);
         const leftArm = new THREE.Mesh(armGeo, skinMat);
-        leftArm.position.set(-0.48, 1.35, 0);
+        leftArm.position.set(-0.428, 1.35, 0);
         ped.add(leftArm);
 
         const rightArm = new THREE.Mesh(armGeo, skinMat);
-        rightArm.position.set(0.48, 1.35, 0);
+        rightArm.position.set(0.428, 1.35, 0);
         ped.add(rightArm);
 
         ped.userData = { leftLeg, rightLeg, leftArm, rightArm };
@@ -92,7 +92,7 @@ export class PedestrianManager {
             p.animTimer += dt * (p.isPanicking ? 8.0 : 4.0);
 
             // Arm/leg swinging walk animation
-            const swing = Math.sin(p.animTimer) * 0.4;
+            const swing = Math.sin(p.animTimer) * 0.42;
             p.leftLeg.rotation.x = swing;
             p.rightLeg.rotation.x = -swing;
             p.leftArm.rotation.x = -swing;
