@@ -34,6 +34,10 @@ export class HUD {
         }
     }
 
+    updateClock(timeStr) {
+        if (this.elements.clock) this.elements.clock.textContent = timeStr;
+    }
+
     updateNitro(nitroRatio) {
         if (!this.elements.nitroBar) return;
         const pct = Math.max(0, Math.min(100, Math.round(nitroRatio * 100)));
