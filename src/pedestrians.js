@@ -28,6 +28,7 @@ export class PedestrianManager {
             this.scene.add(pedMesh);
 
             this.pedestrians.push({
+                id: i,
                 mesh: pedMesh,
                 x: cx,
                 z: cz,
