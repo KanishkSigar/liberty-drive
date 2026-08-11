@@ -150,6 +150,7 @@ class Game {
         sun.shadow.camera.far = 600;
         sun.shadow.bias = -0.001;
         this.scene.add(sun);
+        this.lighting.init(sun, this.scene.children.find(c => c.isAmbientLight), this.scene.children.find(c => c.isHemisphereLight));
 
         // Build City
         this.city = new City(this.scene);
