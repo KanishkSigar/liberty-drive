@@ -27,7 +27,7 @@ export class WeatherSystem {
                 break;
             case 'overcast':
                 this.scene.fog.near = 110;
-                this.scene.fog.far = 520;
+                this.scene.fog.far = 540;
                 break;
             case 'foggy':
                 this.scene.fog.near = 35;
