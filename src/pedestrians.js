@@ -104,7 +104,7 @@ export class PedestrianManager {
             if (dist < 18) {
                 p.isPanicking = true;
                 // Move away from car
-                p.x -= (dx / (dist + 0.1)) * (p.speed * 2.5) * dt;
+                p.x -= (dx / (dist + 0.1)) * (p.speed * 2.8) * dt;
                 p.z -= (dz / (dist + 0.1)) * (p.speed * 2.5) * dt;
             } else {
                 p.isPanicking = false;
