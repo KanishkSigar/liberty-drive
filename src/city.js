@@ -647,7 +647,7 @@ export class City {
     _streetLights() {
         const total = this.gridN * this.step;
         const half = total / 2;
-        const poleMat = new THREE.MeshStandardMaterial({ color: 0x4a4a50, roughness: 0.55, metalness: 0.35 });
+        const poleMat = new THREE.MeshStandardMaterial({ color: 0x4a4a50, roughness: 0.52, metalness: 0.38 });
 
         for (let r = 0; r <= this.gridN; r++) {
             for (let c = 0; c <= this.gridN; c++) {
