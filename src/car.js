@@ -31,6 +31,7 @@ export class Car {
         this.health = this.maxHealth;
         this.nitro = 100;
         this.maxNitro = 100;
+        this.nitroRegenRate = 12;
         this.isBoosting = false;
         this.hd = 5.2;
 
