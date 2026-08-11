@@ -408,6 +408,7 @@ class Game {
         this.skids.update(dt);
         if (this.pedestrians) this.pedestrians.update(dt, this.car ? this.car.x : 0, this.car ? this.car.z : 0);
         this.weather.update(dt);
+        if (this.lighting) this.lighting.update(dt);
 
         if (this.state !== 'PLAY') {
             this.audio.stopEngine();
