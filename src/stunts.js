@@ -41,7 +41,7 @@ export class StuntManager {
             if (this.scoreEl) this.scoreEl.textContent = `INSANE STUNT BONUS! +${bonus} PTS`;
             setTimeout(() => {
                 if (this.element) this.element.classList.add('hidden');
-            }, 2500);
+            }, 2800);
         }
     }
 }
