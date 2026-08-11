@@ -6,6 +6,7 @@ export class PedestrianManager {
         this.scene = scene;
         this.city = city;
         this.pedestrians = [];
+        this.panicScreamed = false;
         this.clothingColors = [0x3a5878, 0x884433, 0x446644, 0x775533, 0x2b2b2b, 0x553355, 0x666655];
     }
 
