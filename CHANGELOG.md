@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0 — Pedestrians, Dynamic Day/Night & Stunts Overhaul
+- Full Pedestrian AI simulation (`src/pedestrians.js`) with walk animations and vehicle avoidance
+- Dynamic Celestial Lighting (`src/lighting.js`) with sun/moon orbits and day/night transitions
+- Stunt Jump & Airtime Tracker (`src/stunts.js`) with insane stunt bonuses & airtime scoring
+- Live In-Game Digital Clock HUD display with 12-hour AM/PM formatting
+- Projected vehicle headlight spotlight cones and street lamp point lights
+- Pedestrian panic screech sound synthesizer
+- Stunt victory arpeggio chime fanfare
+
 ## v1.2.0 — Destructible Street Props & Dynamic Skid Marks
 - Destructible Fire Hydrants with vertical pressurized water geyser fountains on collision
 - Dynamic Road Skid Marks (`src/skid.js`) with persistent rubber tire decal ribbons on asphalt
