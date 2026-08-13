@@ -22,7 +22,7 @@ export class SprayGarageManager {
 
     _buildGarages() {
         const wallMat = new THREE.MeshStandardMaterial({ color: 0x3a3028, roughness: 0.8 });
-        const roofMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1f, roughness: 0.6 });
+        const roofMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1f, roughness: 0.55, metalness: 0.35 });
         const signMat = new THREE.MeshBasicMaterial({ color: 0xf0c540 });
 
         this.garages.forEach(g => {
