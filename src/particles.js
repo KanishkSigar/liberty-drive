@@ -61,7 +61,7 @@ export class ParticleSystem {
             case 'drift_smoke':
                 geo = new THREE.SphereGeometry(0.35, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0xdddddd, transparent: true, opacity: 0.6
+                    color: 0xdddddd, transparent: true, opacity: 0.65
                 });
                 break;
             case 'skid':
