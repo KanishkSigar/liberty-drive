@@ -562,6 +562,7 @@ class Game {
         this.hud.updateTime(this.timeLeft);
         if (this.lighting) this.hud.updateClock(this.lighting.getFormattedTime());
         if (this.stunts) this.stunts.update(this.car.speed, wasCollided, dt);
+        if (this.sprayGarages) this.sprayGarages.checkEntrance(this.car, this.wanted, this.audio, dt);
 
         // Screen shake
         if (this._screenShake && this._screenShake > 0) {
