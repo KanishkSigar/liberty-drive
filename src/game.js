@@ -485,6 +485,8 @@ class Game {
         // Tire skid smoke during handbrake/tight turns
         if (this.input.is('handbrake') && Math.abs(this.car.speed) > 15) {
             this.particles.emit(this.car.x, 0.1, this.car.z, 'skid');
+            this.particles.emit(offLeftX, 0.3, offLeftZ, 'drift_smoke');
+            this.particles.emit(offRightX, 0.3, offRightZ, 'drift_smoke');
             const offLeftX = this.car.x - Math.cos(this.car.angle) * 1.8;
             const offLeftZ = this.car.z + Math.sin(this.car.angle) * 1.8;
             const offRightX = this.car.x + Math.cos(this.car.angle) * 1.8;
