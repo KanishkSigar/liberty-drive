@@ -671,7 +671,7 @@ class Game {
             this.sprayGarages.garages.forEach(g => {
                 const gx = g.x * scale + offX;
                 const gz = g.z * scale + offZ;
-                ctx.fillStyle = '#f0c540';
+                ctx.fillStyle = '#ffdd44';
                 ctx.fillRect(gx - 3.5, gz - 3.5, 7, 7);
             });
         }
