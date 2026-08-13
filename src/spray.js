@@ -72,7 +72,7 @@ export class SprayGarageManager {
 
     _startRespray(garage, car, audio) {
         this.isRespraying = true;
-        this.resprayTimer = 2.4;
+        this.resprayTimer = 2.2;
         this.activeGarage = garage;
         car.speed = 0;
         if (audio) audio.playSprayPaint();
