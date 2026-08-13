@@ -6,6 +6,8 @@ export class SprayGarageManager {
         this.scene = scene;
         this.city = city;
         this.garages = [
+            { x: -140, z: -140, w: 24, d: 24, name: 'PORTLAND DOCKS SPRAY' },
+            { x: 140, z: 140, w: 24, d: 24, name: 'HEPBURN HEIGHTS SPRAY' }
             { x: -140, z: -140, w: 22, d: 22, name: 'PORTLAND DOCKS SPRAY' },
             { x: 140, z: 140, w: 22, d: 22, name: 'HEPBURN HEIGHTS SPRAY' }
             
