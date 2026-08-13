@@ -291,7 +291,7 @@ export class AudioManager {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(80, now);
+        osc.frequency.setValueAtTime(95, now);
         osc.frequency.exponentialRampToValueAtTime(30, now + 1.2);
         gain.gain.setValueAtTime(0.22, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
