@@ -663,6 +663,16 @@ class Game {
             ctx.beginPath(); ctx.arc(px, pz, 3.5, 0, Math.PI * 2); ctx.fill();
         });
 
+        // Pay 'n' Spray garage radar blips (gold squares)
+        if (this.sprayGarages && this.sprayGarages.garages) {
+            this.sprayGarages.garages.forEach(g => {
+                const gx = g.x * scale + offX;
+                const gz = g.z * scale + offZ;
+                ctx.fillStyle = '#f0c540';
+                ctx.fillRect(gx - 3.5, gz - 3.5, 7, 7);
+            });
+        }
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
