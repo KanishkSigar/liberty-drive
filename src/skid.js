@@ -28,7 +28,7 @@ export class SkidMarkManager {
         mesh.position.set(x, 0.05, z);
 
         this.scene.add(mesh);
-        this.skids.push({ mesh, life: 8.0 });
+        this.skids.push({ mesh, life: 9.0 });
     }
 
     update(dt) {
