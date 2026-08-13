@@ -285,6 +285,22 @@ export class AudioManager {
         noise.stop(now + 1.8);
     }
 
+    playThunder() {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(80, now);
+        osc.frequency.exponentialRampToValueAtTime(30, now + 1.2);
+        gain.gain.setValueAtTime(0.22, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 1.2);
+    }
+
     stopEngine() {
         if (this.engineGain && this.ctx) {
             this.engineGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
