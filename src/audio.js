@@ -46,7 +46,24 @@ export class AudioManager {
         this.engineOsc.start();
     }
 
-    playSqueal() {
+    playSqueal(slipRatio = 1.0) {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(750 + slipRatio * 200, now);
+        osc.frequency.linearRampToValueAtTime(600, now + 0.15);
+
+        gain.gain.setValueAtTime(0.06 * Math.min(1.2, slipRatio), now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.15);
+    }
         if (!this.initialized || !this.ctx || this.isMuted) return;
         const now = this.ctx.currentTime;
         const osc = this.ctx.createOscillator();
