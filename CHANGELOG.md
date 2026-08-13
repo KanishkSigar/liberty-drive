@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.4.0 — Pay 'n' Spray Garages & Thunderstorm Weather
+- Pay 'n' Spray Garages (`src/spray.js`) at Portland Docks and Hepburn Heights for vehicle repair, wanted heat wipe, and custom resprays
+- Dynamic Sky Lightning Flashes and sub-bass Thunder Rumble synthesizer (`src/weather.js`)
+- Spray paint hiss pressure sound synthesizer
+- Billowing white tire friction drift smoke (`src/particles.js`)
+- Dynamic tire squeal pitch modulation scaling with drift slip ratio
+- Expanded particle buffer capacity to 400 units and skid decals to 120 units
+
 ## v1.3.0 — Pedestrians, Dynamic Day/Night & Stunts Overhaul
 - Full Pedestrian AI simulation (`src/pedestrians.js`) with walk animations and vehicle avoidance
 - Dynamic Celestial Lighting (`src/lighting.js`) with sun/moon orbits and day/night transitions
