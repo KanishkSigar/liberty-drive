@@ -58,6 +58,12 @@ export class ParticleSystem {
                     color: 0x99bbdd, transparent: true, opacity: 0.4
                 });
                 break;
+            case 'drift_smoke':
+                geo = new THREE.SphereGeometry(0.35, 4, 4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0xdddddd, transparent: true, opacity: 0.55
+                });
+                break;
             case 'skid':
                 geo = new THREE.PlaneGeometry(0.4, 0.4);
                 mat = new THREE.MeshBasicMaterial({
