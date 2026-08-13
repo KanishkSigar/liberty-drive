@@ -10,7 +10,7 @@ export class SprayGarageManager {
             { x: 140, z: 140, w: 22, d: 22, name: 'HEPBURN HEIGHTS SPRAY' }
             
         ];
-        this.resprayColors = [0x991111, 0x113388, 0x116633, 0xddaa11, 0x441166, 0x111111, 0xcccccc];
+        this.resprayColors = [0x00d2ff, 0xff3344, 0x22cc55, 0x991111, 0x113388, 0x116633, 0xddaa11, 0x441166, 0x111111, 0xcccccc];
         this.isRespraying = false;
         this.resprayTimer = 0;
         this.activeGarage = null;
