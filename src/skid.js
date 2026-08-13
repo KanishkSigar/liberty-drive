@@ -5,7 +5,7 @@ export class SkidMarkManager {
     constructor(scene) {
         this.scene = scene;
         this.skids = [];
-        this.maxSkids = 120;
+        this.maxSkids = 130;
     }
 
     addSkid(x, z, angle, width = 0.55) {
