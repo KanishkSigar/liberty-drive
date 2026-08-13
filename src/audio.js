@@ -292,7 +292,7 @@ export class AudioManager {
         filter.Q.setValueAtTime(2.5, now);
 
         const gain = this.ctx.createGain();
-        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.setValueAtTime(0.14, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 1.8);
 
         noise.connect(filter);
