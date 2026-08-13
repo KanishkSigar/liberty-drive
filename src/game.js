@@ -15,6 +15,7 @@ import { SkidMarkManager } from './skid.js';
 import { PedestrianManager } from './pedestrians.js';
 import { LightingManager } from './lighting.js';
 import { StuntManager } from './stunts.js';
+import { SprayGarageManager } from './spray.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
