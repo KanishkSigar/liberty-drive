@@ -57,7 +57,7 @@ export class Car {
         this.mesh = new THREE.Group();
 
         const bodyColor = vehConfig ? vehConfig.color : 0x3a5878;
-        const bodyMat = new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.32, metalness: 0.56 });
+        this.bodyMat = new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.32, metalness: 0.56 });
         const darkMat = new THREE.MeshStandardMaterial({ color: 0x1a1a22, roughness: 0.3, metalness: 0.2 });
         const chromeMat = new THREE.MeshStandardMaterial({ color: 0xb8b8b8, roughness: 0.12, metalness: 0.85 });
         const glassMat = new THREE.MeshStandardMaterial({ color: 0x1a2535, roughness: 0.04, metalness: 0.4, transparent: true, opacity: 0.58 });
@@ -65,7 +65,7 @@ export class Car {
 
         // Main body
         const bodyGeo = new THREE.BoxGeometry(5.4, 1.5, 10.4);
-        const body = new THREE.Mesh(bodyGeo, bodyMat);
+        const body = new THREE.Mesh(bodyGeo, this.bodyMat);
         body.position.y = 1.05;
         body.castShadow = true; body.receiveShadow = true;
         this.mesh.add(body);
