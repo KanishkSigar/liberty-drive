@@ -103,7 +103,10 @@ export class ParticleSystem {
             p.mesh.position.y += p.vy * dt;
             p.mesh.position.z += p.vz * dt;
             
-            if (p.type === 'water_geyser') {
+            if (p.type === 'drift_smoke') {
+                p.mesh.position.y += 0.8 * dt;
+                p.mesh.scale.multiplyScalar(1 + dt * 1.6);
+            } else if (p.type === 'water_geyser') {
                 p.mesh.position.y += 8.0 * dt;
                 p.mesh.position.x += (Math.random() - 0.5) * 0.8 * dt;
                 p.mesh.position.z += (Math.random() - 0.5) * 0.8 * dt;
