@@ -164,6 +164,7 @@ class Game {
 
         this.particles = new ParticleSystem(this.scene);
         this.weather = new WeatherSystem(this.scene);
+        this.weather.setAudio(this.audio);
         this.wanted = new WantedManager(this.scene, this.city);
         this.wanted.setAudio(this.audio);
         this.radio = new RadioManager(this.audio.ctx);
