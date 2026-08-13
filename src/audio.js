@@ -257,6 +257,34 @@ export class AudioManager {
         });
     }
 
+    playSprayPaint() {
+        if (!this.initialized || !this.ctx || this.isMuted) return;
+        const now = this.ctx.currentTime;
+        const bufSize = this.ctx.sampleRate * 1.8;
+        const buf = this.ctx.createBuffer(1, bufSize, this.ctx.sampleRate);
+        const data = buf.getChannelData(0);
+        for (let i = 0; i < bufSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * 0.25;
+        }
+        const noise = this.ctx.createBufferSource();
+        noise.buffer = buf;
+
+        const filter = this.ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(2800, now);
+        filter.Q.setValueAtTime(2.5, now);
+
+        const gain = this.ctx.createGain();
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 1.8);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(this.ctx.destination);
+        noise.start(now);
+        noise.stop(now + 1.8);
+    }
+
     stopEngine() {
         if (this.engineGain && this.ctx) {
             this.engineGain.gain.setValueAtTime(0.001, this.ctx.currentTime);
