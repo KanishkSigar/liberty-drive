@@ -6,6 +6,17 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Police Roadblocks & Spike Strips** — Barricades spawn at high wanted levels; spike strips pop tires with handling penalties
+- **Chassis Underglow Neon** — Vibrant ground-illuminating neon tubes with custom vehicle color themes
+- **Police Radio Dispatch Synthesizer** — Radio bleeps and urgent countdown audio cues
+- **Drive-By Shooting System** — Fire Uzi 9mm submachine guns out of vehicle windows with Q / E keys
+- **Vehicle Explosions & Shockwaves** — Heavy explosion blasts and radial expanding fire shockwaves
+- **Pay 'n' Spray Garages** — Drive into Portland Docks & Hepburn Heights garages to repair and respray
+- **Dynamic Thunderstorm Weather** — Sky lightning flashes illuminating city streets with thunder audio
+- **Billowing Drift Smoke & Skid Marks** — Dense white tire friction smoke clouds and persistent rubber ribbons
+- **Pedestrian Simulation System** — 30 animated pedestrians walking sidewalks with active panic evasion
+- **Dynamic Celestial Day/Night Cycle** — Sun/moon orbital trajectory with live digital clock HUD display
+
 - **Drive-By Shooting System** — Fire Uzi 9mm submachine guns out of vehicle windows with Q / E keys
 - **Vehicle Explosions & Shockwaves** — Heavy explosion blasts and radial expanding fire shockwaves
 - **Pay 'n' Spray Garages** — Drive into Portland Docks & Hepburn Heights garages to repair and respray
