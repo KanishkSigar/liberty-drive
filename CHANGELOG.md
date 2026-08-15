@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.0 — Drive-By Weapons & Explosions Overhaul
+- Uzi 9mm Drive-By Shooting system (`src/weapons.js`) with Q (Left) and E (Right) window firing
+- High-velocity bullet tracers and muzzle flash spark emitters
+- Automatic gunfire audio synthesizer (`playGunfire`) in Web Audio engine
+- Vehicle explosion blast synthesizer and expanding radial fire shockwaves (`src/particles.js`)
+- HUD UZI 9MM weapon and live ammo counter display (`150 / 150`)
+- Rebindable drive-by shoot keys in Settings menu
+- Expanded particle capacity buffer to 480 units
+
 ## v1.4.0 — Pay 'n' Spray Garages & Thunderstorm Weather
 - Pay 'n' Spray Garages (`src/spray.js`) at Portland Docks and Hepburn Heights for vehicle repair, wanted heat wipe, and custom resprays
 - Dynamic Sky Lightning Flashes and sub-bass Thunder Rumble synthesizer (`src/weather.js`)
