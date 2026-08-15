@@ -299,6 +299,12 @@ export class Car {
         this.mesh.add(hlSpot);
         this.mesh.add(hlSpot.target);
 
+        // Chassis Underglow Neon Lighting
+        const neonColor = (vehConfig && vehConfig.underglow) ? vehConfig.underglow : 0x00d2ff;
+        this.underglowLight = new THREE.PointLight(neonColor, 2.2, 14);
+        this.underglowLight.position.set(0, 0.15, 0);
+        this.mesh.add(this.underglowLight);
+
         // Wheel well arches
         const archMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1e, roughness: 0.8 });
         [3.3, -3.3].forEach(zpos => {
