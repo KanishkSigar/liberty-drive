@@ -667,7 +667,7 @@ export class City {
                     this.scene.add(pole);
 
         // Street light head emissive cone
-        const lampGlow = new THREE.PointLight(0xffdd99, 1.4, 32);
+        const lampGlow = new THREE.PointLight(0xffdd99, 1.5, 34);
         lampGlow.position.set(cx, 16.5, cz);
         this.scene.add(lampGlow);
 
