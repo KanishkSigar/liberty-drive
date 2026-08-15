@@ -567,6 +567,16 @@ class Game {
         if (this.lighting) this.hud.updateClock(this.lighting.getFormattedTime());
         if (this.stunts) this.stunts.update(this.car.speed, wasCollided, dt);
         if (this.sprayGarages) this.sprayGarages.checkEntrance(this.car, this.wanted, this.audio, dt);
+        if (this.weapons) {
+            this.weapons.update(dt);
+            if (this.input.is('fireLeft')) {
+                this.weapons.fire(this.car.x, 0, this.car.z, this.car.angle, -1, this.audio, this.particles);
+                this.wanted.addHeat(1);
+            } else if (this.input.is('fireRight')) {
+                this.weapons.fire(this.car.x, 0, this.car.z, this.car.angle, 1, this.audio, this.particles);
+                this.wanted.addHeat(1);
+            }
+        }
 
         // Screen shake
         if (this._screenShake && this._screenShake > 0) {
