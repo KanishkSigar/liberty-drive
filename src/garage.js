@@ -7,7 +7,7 @@ export const VEHICLE_ROSTER = [
         name: 'KURUMA SEDAN',
         desc: 'Balanced street performance with electric cyan neon.',
         color: 0x3a5878,
-        underglow: 0x00d2ff,
+        underglow: 0x00f0ff,
         
         accelForce: 110,
         steerRate: 3.2,
