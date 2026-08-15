@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.6.0 — Police Roadblocks, Spike Strips & Chassis Underglow
+## v1.6.0 � Release — Police Roadblocks, Spike Strips & Chassis Underglow
 - Police Barricades & Spike Strip Traps (`src/roadblocks.js`) spawning at Wanted 2+ Stars
 - Dynamic Tire Puncture physics with handling instability and top speed penalty
 - Chassis Underglow Neon Lighting with customizable vehicle roster color glows (Cyan, Crimson, Electric Blue)
