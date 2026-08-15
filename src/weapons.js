@@ -22,7 +22,7 @@ export class WeaponManager {
         const sz = carZ + Math.cos(offAngle) * 2.2;
         const sy = carY + 1.2;
 
-        const bulletSpeed = 180;
+        const bulletSpeed = 210;
         const vx = Math.sin(offAngle) * bulletSpeed;
         const vz = Math.cos(offAngle) * bulletSpeed;
 
