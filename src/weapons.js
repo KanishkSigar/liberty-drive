@@ -8,7 +8,7 @@ export class WeaponManager {
         this.ammo = 150;
         this.maxAmmo = 160;
         this.fireCooldown = 0;
-        this.fireRate = 0.085; // 660 rounds/min
+        this.fireRate = 0.08; // 660 rounds/min
     }
 
     fire(carX, carY, carZ, carAngle, side = 1, audio, particles) {
