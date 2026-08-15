@@ -16,7 +16,7 @@ export class Car {
         this.accelForce = vehConfig ? vehConfig.accelForce : 108;       // acceleration per second
         this.brakeForce = 180;
         this.friction = 19;
-        this.handbrakeForce = 260;
+        this.handbrakeForce = 265;
         this.steer = 0;
         this.bodyRoll = 0;
         this.bodyPitch = 0;
