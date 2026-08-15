@@ -29,6 +29,7 @@ export class Car {
         this.health = 100;
         this.maxHealth = vehConfig ? vehConfig.armor : 100;
         this.health = this.maxHealth;
+        this.tiresPopped = false;
         this.nitro = 100;
         this.maxNitro = 100;
         this.nitroRegenRate = 12;
