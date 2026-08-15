@@ -45,7 +45,7 @@ export class RoadblockManager {
         grp.add(spike);
 
         // Position 140 units ahead of player
-        const spawnDist = 140;
+        const spawnDist = 150;
         const angle = Math.random() * Math.PI * 2;
         const rx = px + Math.cos(angle) * spawnDist;
         const rz = pz + Math.sin(angle) * spawnDist;
