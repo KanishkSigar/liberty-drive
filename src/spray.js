@@ -88,6 +88,9 @@ export class SprayGarageManager {
     _finishRespray(car, wanted) {
         car.health = car.maxHealth;
         wanted.reset();
+        car.tiresPopped = false;
+        car.maxSpeed = 138;
+        car.accelForce = 110;
         const newColor = this.resprayColors[Math.floor(Math.random() * this.resprayColors.length)];
         car.bodyMat.color.setHex(newColor);
         if (this.hudBanner) {
