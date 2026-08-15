@@ -58,6 +58,12 @@ export class ParticleSystem {
                     color: 0x99bbdd, transparent: true, opacity: 0.4
                 });
                 break;
+            case 'explosion_fire':
+                geo = new THREE.SphereGeometry(0.65, 4, 4);
+                mat = new THREE.MeshBasicMaterial({
+                    color: 0xff3300, transparent: true, opacity: 0.95
+                });
+                break;
             case 'drift_smoke':
                 geo = new THREE.SphereGeometry(0.35, 4, 4);
                 mat = new THREE.MeshBasicMaterial({
