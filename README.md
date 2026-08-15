@@ -92,6 +92,7 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 | C | Toggle Camera View |
 | R | Toggle Radio Station |
 | Shift | Nitro Boost |
+| Q / E | Drive-By Shooting (Left / Right) |
 | < / > | Select Vehicle in Menu |
 | C | Camera Toggle |
 
