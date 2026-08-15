@@ -5,7 +5,7 @@ export class ParticleSystem {
     constructor(scene) {
         this.scene = scene;
         this.particles = [];
-        this.maxParticles = 480;
+        this.maxParticles = 500;
     }
 
     emit(x, y, z, type) {
