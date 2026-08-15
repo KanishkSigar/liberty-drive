@@ -668,7 +668,7 @@ export class City {
 
         // Street light head emissive cone
         const lampGlow = new THREE.PointLight(0xffdd99, 1.4, 32);
-        lampGlow.position.set(cx, 16, cz);
+        lampGlow.position.set(cx, 16.5, cz);
         this.scene.add(lampGlow);
 
                     // Curved arm
