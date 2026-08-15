@@ -24,7 +24,7 @@ export class RoadblockManager {
 
     _spawnRoadblock(px, pz) {
         const grp = new THREE.Group();
-        const bMat = new THREE.MeshStandardMaterial({ color: 0x111118, roughness: 0.3 });
+        const bMat = new THREE.MeshStandardMaterial({ color: 0x111118, roughness: 0.35, metalness: 0.4 });
         const wMat = new THREE.MeshStandardMaterial({ color: 0xf0f0f5, roughness: 0.3 });
         const spikeMat = new THREE.MeshStandardMaterial({ color: 0x333333, metalness: 0.8 });
 
