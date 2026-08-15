@@ -441,7 +441,7 @@ class Game {
             if (this.roadblocks.checkSpikes(this.car.x, this.car.z, 2.5) && !this.car.tiresPopped) {
                 this.car.popTires();
                 if (this.audio) this.audio.playTirePop();
-                this.hud.showToast('TIRES PUNCTURED BY SPIKE STRIP!', 'danger');
+                this.hud.showToast('⚠️ TIRES PUNCTURED BY SPIKE STRIP!', 'danger');
             }
         }
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
