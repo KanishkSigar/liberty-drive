@@ -52,6 +52,11 @@ export class WeaponManager {
             b.mesh.position.x += b.vx * dt;
             b.mesh.position.z += b.vz * dt;
 
+            // Hitscan collision check against city bounds & props
+            if (b.mesh.position.y < 0.2 || b.mesh.position.y > 15) {
+                b.life = 0;
+            }
+
             if (b.life <= 0) {
                 this.scene.remove(b.mesh);
                 this.bullets.splice(i, 1);
