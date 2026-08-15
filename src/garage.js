@@ -5,7 +5,7 @@ export const VEHICLE_ROSTER = [
     {
         id: 'sedan',
         name: 'KURUMA SEDAN',
-        desc: 'Balanced street performance with cyan chassis neon.',
+        desc: 'Balanced street performance with electric cyan neon.',
         color: 0x3a5878,
         underglow: 0x00d2ff,
         
