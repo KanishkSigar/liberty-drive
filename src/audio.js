@@ -341,13 +341,13 @@ export class AudioManager {
         const gain = this.ctx.createGain();
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(140, now);
-        osc.frequency.exponentialRampToValueAtTime(25, now + 1.4);
+        osc.frequency.exponentialRampToValueAtTime(25, now + 1.5);
         gain.gain.setValueAtTime(0.35, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 1.4);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 1.5);
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start(now);
-        osc.stop(now + 1.4);
+        osc.stop(now + 1.5);
     }
 
     stopEngine() {
