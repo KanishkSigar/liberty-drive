@@ -5,6 +5,39 @@ export const VEHICLE_ROSTER = [
     {
         id: 'sedan',
         name: 'KURUMA SEDAN',
+        desc: 'Balanced street performance with cyan chassis neon.',
+        color: 0x3a5878,
+        underglow: 0x00d2ff,
+        
+        accelForce: 110,
+        steerRate: 3.2,
+        armor: 100
+    },
+    {
+        id: 'sports',
+        name: 'STINGER COUPE',
+        desc: 'High acceleration sports car with crimson red neon.',
+        color: 0xc82020,
+        underglow: 0xff1144,
+        topSpeed: 160,
+        accelForce: 128,
+        steerRate: 3.6,
+        armor: 80
+    },
+    {
+        id: 'enforcer',
+        name: 'POLICE ENFORCER',
+        desc: 'Reinforced patrol cruiser with deep electric blue neon.',
+        color: 0x1a1a24,
+        underglow: 0x0066ff,
+        topSpeed: 144,
+        accelForce: 115,
+        steerRate: 3.0,
+        armor: 160
+    }
+    {
+        id: 'sedan',
+        name: 'KURUMA SEDAN',
         desc: 'Balanced street performance with reliable handling.',
         color: 0x3a5878,
         topSpeed: 138,
