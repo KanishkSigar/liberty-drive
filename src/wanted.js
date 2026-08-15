@@ -112,6 +112,10 @@ export class WantedManager {
 
     _updateStars() {
         let prevStars = this.stars;
+        if (this.stars > prevStars && this.audio) {
+            this.audio.playPoliceRadio();
+        }
+        let prevStars = this.stars;
         if (this.heat >= 75) this.stars = 3;
         else if (this.heat >= 40) this.stars = 2;
         else if (this.heat >= 15) this.stars = 1;
