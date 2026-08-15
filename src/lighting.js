@@ -5,7 +5,7 @@ export class LightingManager {
     constructor(scene) {
         this.scene = scene;
         this.time = 0.35; // 0.0 (midnight) to 1.0 (midnight next day)
-        this.speed = 0.009; // Day length speed
+        this.speed = 0.0095; // Day length speed
         this.sun = null;
         this.ambient = null;
         this.hemi = null;
