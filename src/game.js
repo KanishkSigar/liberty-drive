@@ -574,6 +574,9 @@ class Game {
         this.hud.updateSpeed(this.car.mph);
         this.hud.updateGear(this.car.speed);
         this.hud.updateTime(this.timeLeft);
+        if (this.timeLeft < 10 && this.timeLeft > 0 && Math.floor(this.timeLeft) !== Math.floor(this.timeLeft + dt)) {
+            if (this.audio) this.audio.playUrgentTick();
+        }
         if (this.lighting) this.hud.updateClock(this.lighting.getFormattedTime());
         if (this.stunts) this.stunts.update(this.car.speed, wasCollided, dt);
         if (this.sprayGarages) this.sprayGarages.checkEntrance(this.car, this.wanted, this.audio, dt);
