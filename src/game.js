@@ -435,6 +435,14 @@ class Game {
         this.hud.updateNitro((this.car.nitro || 0) / (this.car.maxNitro || 100));
         this.wanted.coolDown(dt);
         this.wanted.updatePursuit(this.car.x, this.car.z, dt);
+        if (this.roadblocks) {
+            this.roadblocks.update(this.wanted.stars, this.car.x, this.car.z, dt);
+            if (this.roadblocks.checkSpikes(this.car.x, this.car.z, 2.5) && !this.car.tiresPopped) {
+                this.car.popTires();
+                if (this.audio) this.audio.playTirePop();
+                this.hud.showToast('TIRES PUNCTURED BY SPIKE STRIP!', 'danger');
+            }
+        }
         this.audio.updateEngine(this.car.mph, this.input.is('accelerate'));
 
         // Check destructible prop hit
