@@ -696,6 +696,22 @@ class Game {
             });
         }
 
+        // Roadblock hazard radar blips (red warning diamonds)
+        if (this.roadblocks && this.roadblocks.roadblocks) {
+            this.roadblocks.roadblocks.forEach(rb => {
+                const rx = rb.x * scale + offX;
+                const rz = rb.z * scale + offZ;
+                ctx.fillStyle = '#ff2222';
+                ctx.beginPath();
+                ctx.moveTo(rx, rz - 4);
+                ctx.lineTo(rx + 4, rz);
+                ctx.lineTo(rx, rz + 4);
+                ctx.lineTo(rx - 4, rz);
+                ctx.closePath();
+                ctx.fill();
+            });
+        }
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
