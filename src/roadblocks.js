@@ -66,7 +66,7 @@ export class RoadblockManager {
             if (!rb.spikesActive) continue;
             const dx = carX - rb.x;
             const dz = carZ - rb.z;
-            if (dx * dx + dz * dz < (carRadius + 4.5) * (carRadius + 4.5)) {
+            if (dx * dx + dz * dz < (carRadius + 4.8) * (carRadius + 4.8)) {
                 rb.spikesActive = false;
                 return true;
             }
