@@ -26,7 +26,7 @@ export class RoadblockManager {
         const grp = new THREE.Group();
         const bMat = new THREE.MeshStandardMaterial({ color: 0x111118, roughness: 0.35, metalness: 0.4 });
         const wMat = new THREE.MeshStandardMaterial({ color: 0xf0f0f5, roughness: 0.3 });
-        const spikeMat = new THREE.MeshStandardMaterial({ color: 0x333333, metalness: 0.8 });
+        const spikeMat = new THREE.MeshStandardMaterial({ color: 0x444444, metalness: 0.85, roughness: 0.2 });
 
         // Two barricade police cruisers blocking lane
         const car1 = new THREE.Mesh(new THREE.BoxGeometry(4.6, 1.3, 8.8), bMat);
