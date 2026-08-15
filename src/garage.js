@@ -21,7 +21,7 @@ export const VEHICLE_ROSTER = [
         underglow: 0xff2255,
         topSpeed: 162,
         accelForce: 128,
-        steerRate: 3.6,
+        steerRate: 3.7,
         armor: 80
     },
     {
@@ -52,7 +52,7 @@ export const VEHICLE_ROSTER = [
         color: 0xc82020,
         topSpeed: 160,
         accelForce: 128,
-        steerRate: 3.6,
+        steerRate: 3.7,
         armor: 80
     },
     {
