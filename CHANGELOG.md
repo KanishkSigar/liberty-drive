@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.6.0 — Police Roadblocks, Spike Strips & Chassis Underglow
+- Police Barricades & Spike Strip Traps (`src/roadblocks.js`) spawning at Wanted 2+ Stars
+- Dynamic Tire Puncture physics with handling instability and top speed penalty
+- Chassis Underglow Neon Lighting with customizable vehicle roster color glows (Cyan, Crimson, Electric Blue)
+- Ground neon reflection plane decals beneath vehicles
+- Police Radio Dispatch chatter audio synthesizer (`playPoliceRadio`)
+- Urgent Countdown audio tick synthesizer (`playUrgentTick`)
+- Dynamic Toast alert styling (Danger, Success) with icon badges
+- Expanded particle capacity buffer to 550 units and skid decals to 150 ribbons
+
 ## v1.5.0 — Drive-By Weapons & Explosions Overhaul
 - Uzi 9mm Drive-By Shooting system (`src/weapons.js`) with Q (Left) and E (Right) window firing
 - High-velocity bullet tracers and muzzle flash spark emitters
