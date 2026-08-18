@@ -439,6 +439,7 @@ class Game {
         this.wanted.updatePursuit(this.car.x, this.car.z, dt);
         if (this.roadblocks) {
             this.roadblocks.update(this.wanted.stars, this.car.x, this.car.z, dt);
+        if (this.heli) this.heli.update(this.wanted.stars, this.car.x, this.car.z, dt, this.audio);
             if (this.roadblocks.checkSpikes(this.car.x, this.car.z, 2.5) && !this.car.tiresPopped) {
                 this.car.popTires();
                 if (this.audio) this.audio.playTirePop();
