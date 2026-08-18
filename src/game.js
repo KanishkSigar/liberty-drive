@@ -718,6 +718,14 @@ class Game {
             });
         }
 
+        // Police Helicopter radar blip (flashing blue rotor icon)
+        if (this.heli && this.heli.active) {
+            const hx = this.heli.x * scale + offX;
+            const hz = this.heli.z * scale + offZ;
+            ctx.fillStyle = (t % 300 < 150) ? '#00e5ff' : '#ffffff';
+            ctx.beginPath(); ctx.arc(hx, hz, 5.0, 0, Math.PI * 2); ctx.fill();
+        }
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
