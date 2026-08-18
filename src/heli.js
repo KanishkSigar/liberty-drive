@@ -42,7 +42,7 @@ export class HelicopterManager {
         grp.add(tail);
 
         // Main Rotor Blade
-        const rotorGeo = new THREE.BoxGeometry(14.5, 0.15, 0.9);
+        const rotorGeo = new THREE.BoxGeometry(16.0, 0.18, 0.95);
         const rotorMat = new THREE.MeshBasicMaterial({ color: 0x222222 });
         this.rotor = new THREE.Mesh(rotorGeo, rotorMat);
         this.rotor.position.set(0, 2.2, 0);
