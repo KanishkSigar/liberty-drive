@@ -33,7 +33,7 @@ export const VEHICLE_ROSTER = [
         topSpeed: 144,
         accelForce: 115,
         steerRate: 3.0,
-        armor: 180
+        armor: 190
     }
     {
         id: 'sedan',
