@@ -74,7 +74,7 @@ export class HelicopterManager {
         if (!this.active || !this.heli) return;
 
         // Spin rotor
-        this.rotorSpeed += dt * 28;
+        this.rotorSpeed += dt * 30;
         if (this.rotor) this.rotor.rotation.y = this.rotorSpeed;
 
         // Track and hover smoothly above player car
