@@ -6,6 +6,16 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Police Air Support Helicopter** — Overhead LCPD chopper with rotating blades and searchlight beam tracking at 3 Wanted Stars
+- **Turbo Backfire Exhaust Pops** — Explosive orange flame cones and snappy backfire audio upon high-speed deceleration
+- **Vertical Checkpoint Sky Beacons** — Towering glowing light columns marking active delivery package locations
+- **Police Roadblocks & Spike Strips** — Barricades spawn at high wanted levels; spike strips pop tires with handling penalties
+- **Chassis Underglow Neon** — Vibrant ground-illuminating neon tubes with custom vehicle color themes
+- **Drive-By Shooting System** — Fire Uzi 9mm submachine guns out of vehicle windows with Q / E keys
+- **Vehicle Explosions & Shockwaves** — Heavy explosion blasts and radial expanding fire shockwaves
+- **Pay 'n' Spray Garages** — Drive into Portland Docks & Hepburn Heights garages to repair and respray
+- **Dynamic Thunderstorm Weather** — Sky lightning flashes illuminating city streets with thunder audio
+
 - **Police Roadblocks & Spike Strips** — Barricades spawn at high wanted levels; spike strips pop tires with handling penalties
 - **Chassis Underglow Neon** — Vibrant ground-illuminating neon tubes with custom vehicle color themes
 - **Police Radio Dispatch Synthesizer** — Radio bleeps and urgent countdown audio cues
