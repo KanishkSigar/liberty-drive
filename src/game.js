@@ -468,6 +468,14 @@ class Game {
             }
         }
 
+        // Turbo backfire exhaust pop upon sudden deceleration at high speed
+        if (!this.input.is('accelerate') && Math.abs(this.car.speed) > 65 && Math.random() < 0.18) {
+            const exX = this.car.x - Math.sin(this.car.angle) * 5.2 + 1.6;
+            const exZ = this.car.z - Math.cos(this.car.angle) * 5.2;
+            this.particles.emit(exX, 0.4, exZ, 'backfire_flame');
+            if (this.audio) this.audio.playBackfire();
+        }
+
         // Nitro boost flame particle burst
         if (this.car.isBoosting) {
             const bx = this.car.x - Math.sin(this.car.angle) * 5.4 + 1.8;
