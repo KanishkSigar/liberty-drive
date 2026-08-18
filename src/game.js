@@ -18,6 +18,7 @@ import { StuntManager } from './stunts.js';
 import { SprayGarageManager } from './spray.js';
 import { WeaponManager } from './weapons.js';
 import { RoadblockManager } from './roadblocks.js';
+import { HelicopterManager } from './heli.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
