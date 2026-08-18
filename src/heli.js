@@ -49,7 +49,7 @@ export class HelicopterManager {
         grp.add(this.rotor);
 
         // High-Intensity Spotlight Beam
-        this.spotlight = new THREE.SpotLight(0xffffff, 3.5, 95, Math.PI / 5, 0.3);
+        this.spotlight = new THREE.SpotLight(0xf0f8ff, 4.0, 110, Math.PI / 4.5, 0.35);
         this.spotlight.position.set(0, -1.2, 0);
         grp.add(this.spotlight);
         grp.add(this.spotlight.target);
