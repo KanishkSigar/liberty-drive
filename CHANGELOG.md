@@ -1,6 +1,13 @@
 # Changelog
 
-## v1.6.0 � Release — Police Roadblocks, Spike Strips & Chassis Underglow
+## v1.7.0 — Police Air Support Helicopter & Turbo Backfire
+- LCPD Air Support Helicopter (`src/heli.js`) with rotating rotors and tracking searchlight at Wanted 3+ Stars
+- Helicopter heavy rotor thumping audio synthesizer (`playHeliRotor`)
+- Turbo Backfire Exhaust Pops (`src/particles.js`) and snappy pop audio synthesizer (`playBackfire`)
+- Checkpoint vertical sky beacon columns and levitating bobbing animation
+- Expanded particle buffer capacity to 650 units and skid decals to 160 units
+
+## v1.6.0 � Release — Police Roadblocks, Spike Strips & Chassis Underglow
 - Police Barricades & Spike Strip Traps (`src/roadblocks.js`) spawning at Wanted 2+ Stars
 - Dynamic Tire Puncture physics with handling instability and top speed penalty
 - Chassis Underglow Neon Lighting with customizable vehicle roster color glows (Cyan, Crimson, Electric Blue)
