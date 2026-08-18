@@ -284,6 +284,7 @@ class Game {
         if (this.car) this.car.destroy();
         this.particles.clear();
         if (this.roadblocks) this.roadblocks.clear();
+        if (this.heli) this.heli.despawn();
         if (this.skids) this.skids.clear();
         this._clearCPs();
 
