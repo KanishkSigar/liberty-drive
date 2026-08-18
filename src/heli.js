@@ -11,7 +11,7 @@ export class HelicopterManager {
         this.rotorSpeed = 0;
         this.x = 0;
         this.z = 0;
-        this.altitude = 52;
+        this.altitude = 55;
     }
 
     spawn(playerX, playerZ) {
