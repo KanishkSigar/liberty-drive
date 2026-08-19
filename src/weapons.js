@@ -6,7 +6,7 @@ export class WeaponManager {
         this.scene = scene;
         this.bullets = [];
         this.ammo = 150;
-        this.maxAmmo = 160;
+        this.maxAmmo = 180;
         this.fireCooldown = 0;
         this.fireRate = 0.08; // 660 rounds/min
     }
