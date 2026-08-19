@@ -24,7 +24,7 @@ export class StuntRampManager {
             const geo = new THREE.BoxGeometry(r.w, r.h, r.d);
             const mesh = new THREE.Mesh(geo, rampMat);
             mesh.position.set(0, r.h / 2, 0);
-            mesh.rotation.x = -0.24; // Launch incline
+            mesh.rotation.x = -0.26; // Launch incline
             grp.add(mesh);
 
             // Glowing neon hazard arrow stripes
