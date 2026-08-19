@@ -28,7 +28,7 @@ export class StuntRampManager {
             grp.add(mesh);
 
             // Glowing neon hazard arrow stripes
-            const arrowGeo = new THREE.BoxGeometry(r.w * 0.85, 0.2, 1.4);
+            const arrowGeo = new THREE.BoxGeometry(r.w * 0.85, 0.22, 1.5);
             for (let k = 0; k < 3; k++) {
                 const arrow = new THREE.Mesh(arrowGeo, chevronMat);
                 arrow.position.set(0, (k + 1) * 1.1, (k - 1) * 4.5);
