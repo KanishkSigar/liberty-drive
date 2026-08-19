@@ -62,7 +62,7 @@ export class ParticleSystem {
                 geo = new THREE.CylinderGeometry(0.08, 0.35, 1.6, 4);
                 geo.rotateX(-Math.PI / 2);
                 mat = new THREE.MeshBasicMaterial({
-                    color: 0xe0f7ff, transparent: true, opacity: 0.85
+                    color: 0xd0f0ff, transparent: true, opacity: 0.85
                 });
                 break;
             case 'backfire_flame':
