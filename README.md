@@ -6,6 +6,15 @@ A GTA III-inspired 3D driving game built entirely with Three.js and vanilla Java
 
 ## Features
 
+- **Mega Stunt Ramps** — Launch off angled stunt ramps with glowing hazard chevrons for huge airtime bonuses
+- **Nitrous Purge Vapor Jets** — Dual cryogenic gas purge plumes erupting from hood vents on nitro activation
+- **Police Air Support Helicopter** — Overhead LCPD chopper with rotating blades and searchlight beam tracking at 3 Wanted Stars
+- **Turbo Backfire Exhaust Pops** — Explosive orange flame cones and snappy backfire audio upon high-speed deceleration
+- **Vertical Checkpoint Sky Beacons** — Towering glowing light columns marking active delivery package locations
+- **Police Roadblocks & Spike Strips** — Barricades spawn at high wanted levels; spike strips pop tires with handling penalties
+- **Chassis Underglow Neon** — Vibrant ground-illuminating neon tubes with custom vehicle color themes
+- **Drive-By Shooting System** — Fire Uzi 9mm submachine guns out of vehicle windows with Q / E keys
+
 - **Police Air Support Helicopter** — Overhead LCPD chopper with rotating blades and searchlight beam tracking at 3 Wanted Stars
 - **Turbo Backfire Exhaust Pops** — Explosive orange flame cones and snappy backfire audio upon high-speed deceleration
 - **Vertical Checkpoint Sky Beacons** — Towering glowing light columns marking active delivery package locations
