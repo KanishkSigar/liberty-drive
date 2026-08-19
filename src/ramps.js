@@ -14,7 +14,7 @@ export class StuntRampManager {
     }
 
     _buildRamps() {
-        const rampMat = new THREE.MeshStandardMaterial({ color: 0x222228, roughness: 0.7 });
+        const rampMat = new THREE.MeshStandardMaterial({ color: 0x282830, roughness: 0.7 });
         const chevronMat = new THREE.MeshBasicMaterial({ color: 0xf0c540 });
 
         this.ramps.forEach(r => {
