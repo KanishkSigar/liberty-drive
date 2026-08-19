@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.8.0 — Mega Stunt Ramps & Nitrous Purge Overhaul
+- Mega Stunt Ramps (`src/ramps.js`) placed across Portland Pier, Heights Alley, and Harbor Bridge with hazard chevrons
+- Ramp launch swoosh audio synthesizer (`playRampLaunch`)
+- Nitrous Oxide Purge cryogenic vapor plume jets (`nitro_purge`) and high-pressure gas hiss audio
+- High-speed speedometer redline glow warning (> 120 MPH)
+- Expanded particle capacity buffer to 720 units and skid decals to 180 units
+
 ## v1.7.0 — Police Air Support Helicopter & Turbo Backfire
 - LCPD Air Support Helicopter (`src/heli.js`) with rotating rotors and tracking searchlight at Wanted 3+ Stars
 - Helicopter heavy rotor thumping audio synthesizer (`playHeliRotor`)
