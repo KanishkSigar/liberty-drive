@@ -739,6 +739,21 @@ class Game {
             ctx.beginPath(); ctx.arc(hx, hz, 5.0, 0, Math.PI * 2); ctx.fill();
         }
 
+        // Stunt Ramp radar blips (yellow jump icons)
+        if (this.ramps && this.ramps.ramps) {
+            this.ramps.ramps.forEach(r => {
+                const rx = r.x * scale + offX;
+                const rz = r.z * scale + offZ;
+                ctx.fillStyle = '#ffea00';
+                ctx.beginPath();
+                ctx.moveTo(rx, rz - 3);
+                ctx.lineTo(rx + 3, rz + 3);
+                ctx.lineTo(rx - 3, rz + 3);
+                ctx.closePath();
+                ctx.fill();
+            });
+        }
+
         // Checkpoint blip
         const m = MISSIONS[this.missionIdx];
         if (m && this.cpIdx < m.points.length) {
