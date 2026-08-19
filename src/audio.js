@@ -437,7 +437,7 @@ export class AudioManager {
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(260, now);
         osc.frequency.exponentialRampToValueAtTime(720, now + 0.35);
-        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.setValueAtTime(0.24, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
         osc.connect(gain);
         gain.connect(this.ctx.destination);
