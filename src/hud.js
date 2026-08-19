@@ -64,6 +64,13 @@ export class HUD {
 
     updateSpeed(mph) {
         this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
+        if (mph > 120) {
+            this.elements.speed.style.color = '#ff3344';
+            this.elements.speed.style.textShadow = '0 0 14px rgba(255,51,68,0.8)';
+        } else {
+            this.elements.speed.style.color = '#ffffff';
+            this.elements.speed.style.textShadow = 'none';
+        }
     }
         this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
     }
