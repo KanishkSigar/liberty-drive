@@ -126,6 +126,9 @@ export class ParticleSystem {
             if (p.type === 'explosion_fire') {
                 p.mesh.position.y += 4.5 * dt;
                 p.mesh.scale.multiplyScalar(1 + dt * 2.8);
+            } else if (p.type === 'nitro_purge') {
+                p.mesh.position.y += 2.2 * dt;
+                p.mesh.scale.multiplyScalar(1 + dt * 2.2);
             } else if (p.type === 'drift_smoke') {
                 p.mesh.position.y += 0.8 * dt;
                 p.mesh.scale.multiplyScalar(1 + dt * 1.6);
