@@ -19,6 +19,7 @@ import { SprayGarageManager } from './spray.js';
 import { WeaponManager } from './weapons.js';
 import { RoadblockManager } from './roadblocks.js';
 import { HelicopterManager } from './heli.js';
+import { StuntRampManager } from './ramps.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
