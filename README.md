@@ -1,4 +1,4 @@
-# Liberty City Chronicles (v1.7.0)
+# Liberty City Chronicles (v1.8.0)
 
 A GTA III-inspired 3D driving game built entirely with Three.js and vanilla JavaScript.
 
