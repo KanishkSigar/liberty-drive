@@ -597,6 +597,16 @@ class Game {
         if (this.sprayGarages) this.sprayGarages.checkEntrance(this.car, this.wanted, this.audio, dt);
         if (this.weapons) {
             this.weapons.update(dt);
+            if (this.input.wasJustPressed('nitro') && this.car.nitro > 10) {
+                const pxLeft = this.car.x + Math.sin(this.car.angle + 0.4) * 2.8;
+                const pzLeft = this.car.z + Math.cos(this.car.angle + 0.4) * 2.8;
+                const pxRight = this.car.x + Math.sin(this.car.angle - 0.4) * 2.8;
+                const pzRight = this.car.z + Math.cos(this.car.angle - 0.4) * 2.8;
+                this.particles.emit(pxLeft, 1.2, pzLeft, 'nitro_purge');
+                this.particles.emit(pxRight, 1.2, pzRight, 'nitro_purge');
+                if (this.audio) this.audio.playNitroPurge();
+            }
+
             if (this.input.is('fireLeft')) {
                 this.weapons.fire(this.car.x, 0, this.car.z, this.car.angle, -1, this.audio, this.particles);
                 this.wanted.addHeat(1);
