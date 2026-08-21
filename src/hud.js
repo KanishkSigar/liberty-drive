@@ -3,6 +3,36 @@
 
 export class HUD {
     constructor() {
+        this.currentTheme = 'gold'; // gold, vice, emerald
+    }
+
+    toggleTheme(audio) {
+        if (this.currentTheme === 'gold') this.currentTheme = 'vice';
+        else if (this.currentTheme === 'vice') this.currentTheme = 'emerald';
+        else this.currentTheme = 'gold';
+
+        this.applyTheme(this.currentTheme);
+        if (audio) audio.playThemeSwitch();
+        return this.currentTheme;
+    }
+
+    applyTheme(theme) {
+        const root = document.documentElement;
+        if (theme === 'vice') {
+            root.style.setProperty('--yellow', '#ff2a8d');
+            root.style.setProperty('--radar-border', 'rgba(255,42,141,0.85)');
+            root.style.setProperty('--glass-border', 'rgba(255,42,141,0.25)');
+        } else if (theme === 'emerald') {
+            root.style.setProperty('--yellow', '#22e066');
+            root.style.setProperty('--radar-border', 'rgba(34,224,102,0.85)');
+            root.style.setProperty('--glass-border', 'rgba(34,224,102,0.25)');
+        } else {
+            root.style.setProperty('--yellow', '#f0c540');
+            root.style.setProperty('--radar-border', 'rgba(242,197,64,0.8)');
+            root.style.setProperty('--glass-border', 'rgba(240,197,64,0.15)');
+        }
+    }
+    constructor() {
         this.elements = {
             speed: document.getElementById('txt-speed'),
             time: document.getElementById('txt-time'),
