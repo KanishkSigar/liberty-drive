@@ -31,7 +31,7 @@ export class WantedManager {
 
     coolDown(dt) {
         if (this.heat > 0) {
-            this.heat = Math.max(0, this.heat - dt * 3.2);
+            this.heat = Math.max(0, this.heat - dt * 3.5);
             this._updateStars();
         }
     }
