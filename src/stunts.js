@@ -35,7 +35,7 @@ export class StuntManager {
     }
 
     _awardStunt() {
-        const bonus = Math.round(this.airtime * 380);
+        const bonus = Math.round(this.airtime * 400);
         this.stuntScore += bonus;
         if (this.element) {
             if (this.scoreEl) this.scoreEl.textContent = `INSANE STUNT BONUS! +${bonus} PTS`;
