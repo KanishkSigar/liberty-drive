@@ -85,6 +85,8 @@ class Game {
         this.input = new InputManager();
         this.hud = new HUD();
         this.audio = new AudioManager();
+        this.lighting = new LightingManager();
+        this.stunts = new StuntManager();
         this.scene = null;
         this.camera = null;
         this.renderer = null;
