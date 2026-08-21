@@ -88,6 +88,7 @@ export class TrafficLightManager {
                 s.redLens.material.color.setHex(0x440000);
                 s.yelLens.material.color.setHex(0x443300);
                 s.grnLens.material.color.setHex(0x22cc55);
+                s.grnLens.material.emissive = new THREE.Color(0x22cc55);
             } else if (this.state === 'YELLOW') {
                 s.redLens.material.color.setHex(0x440000);
                 s.yelLens.material.color.setHex(0xffaa00);
