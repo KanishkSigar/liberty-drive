@@ -235,9 +235,6 @@ class Game {
                     this.wanted.addHeat(2);
                     if (this.audio) this.audio.playPedPanic();
                 }
-                    this.audio.playHorn();
-                    this.wanted.addHeat(2);
-                }
                 if (this.input.wasJustPressed('theme')) {
                     const newTheme = this.hud.toggleTheme(this.audio);
                     this.hud.showToast('HUD THEME: ' + newTheme.toUpperCase(), 'info');
@@ -253,8 +250,6 @@ class Game {
                         clearTimeout(this._radioTimer);
                         this._radioTimer = setTimeout(() => rWrap.classList.add('hidden'), 3500);
                     }
-                }
-                    this.audio.playHorn();
                 }
             }
         });
