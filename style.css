@@ -1,6 +1,9 @@
 /* LibertyDrive3D — GTA III Tribute Stylesheet */
 
 :root {
+    --theme-gold: #f0c540;
+    --theme-pink: #ff2a8d;
+    --theme-green: #22e066;
     --bg: #040407;
     --panel: rgba(8,8,12,0.92);
     --border: rgba(255,255,255,0.08);
