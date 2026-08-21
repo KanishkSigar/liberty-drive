@@ -84,13 +84,6 @@ export class HUD {
         else if (speed < -0.1) g = 'R';
         else if (speed > 100) g = '5';
         else if (speed > 70) g = '4';
-    updateGear(speed) {
-        if (!this.elements.gear) return;
-        let g = '1';
-        if (speed === 0) g = 'N';
-        else if (speed < -0.1) g = 'R';
-        else if (speed > 100) g = '5';
-        else if (speed > 70) g = '4';
         else if (speed > 45) g = '3';
         else if (speed > 20) g = '2';
         this.elements.gear.textContent = g;
@@ -137,5 +130,15 @@ export class HUD {
         if (this.elements.missionNum) {
             this.elements.missionNum.textContent = current + '/' + total;
         }
+    }
+
+    showToast(msg, type = 'info') {
+        const t = document.getElementById('toast');
+        if (!t) return;
+        t.textContent = msg;
+        t.className = 'toast-' + type;
+        t.classList.remove('hidden');
+        clearTimeout(this._toastTimer);
+        this._toastTimer = setTimeout(() => t.classList.add('hidden'), 3000);
     }
 }
