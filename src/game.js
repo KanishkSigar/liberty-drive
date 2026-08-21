@@ -703,7 +703,7 @@ class Game {
             const targetPy = targetPt.z * scale + offZ;
 
             ctx.strokeStyle = 'rgba(240, 197, 64, 0.45)';
-            ctx.lineWidth = 4.2;
+            ctx.lineWidth = 4.5;
             ctx.setLineDash([6, 4]);
             ctx.beginPath();
             ctx.moveTo(offX, offZ);
