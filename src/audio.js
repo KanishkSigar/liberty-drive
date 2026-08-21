@@ -196,7 +196,7 @@ export class AudioManager {
     playPickup() {
         if (!this.initialized || !this.ctx || this.isMuted) return;
         const now = this.ctx.currentTime;
-        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 arpeggio
+        const notes = [554.37, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 arpeggio
 
         notes.forEach((freq, idx) => {
             const osc = this.ctx.createOscillator();
@@ -494,7 +494,7 @@ export class AudioManager {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.setValueAtTime(554.37, now);
         osc.frequency.setValueAtTime(659.25, now + 0.08);
         osc.frequency.setValueAtTime(783.99, now + 0.16);
         gain.gain.setValueAtTime(0.12, now);
