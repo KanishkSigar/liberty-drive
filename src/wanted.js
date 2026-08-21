@@ -8,12 +8,12 @@ export class WantedManager {
         this.stars = 0; // 0 to 3 stars
         this.heat = 0; // Heat points (0 to 100)
         this.policeCars = [];
+        this.audio = null;
+        this.elements = {};
     }
 
     getPolicePositions() {
         return this.policeCars.map(p => ({ x: p.mesh.position.x, z: p.mesh.position.z }));
-        this.sirenTimer = 0;
-        this.audio = audio;
     }
 
     setAudio(audio) {
@@ -111,15 +111,15 @@ export class WantedManager {
     }
 
     _updateStars() {
-        let prevStars = this.stars;
-        if (this.stars > prevStars && this.audio) {
-            this.audio.playPoliceRadio();
-        }
-        let prevStars = this.stars;
+        const prevStars = this.stars;
         if (this.heat >= 75) this.stars = 3;
         else if (this.heat >= 40) this.stars = 2;
         else if (this.heat >= 15) this.stars = 1;
         else this.stars = 0;
+
+        if (this.stars > prevStars && this.audio) {
+            this.audio.playPoliceRadio();
+        }
 
         if (this.elements.stars) {
             this.elements.stars.forEach((star, idx) => {
