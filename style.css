@@ -73,7 +73,7 @@ html, body {
     padding:8px 16px;
     text-align:right;
     min-width:115px;
-    transition:transform 0.2s ease, border-color 0.2s ease;
+    transition:transform 0.2s ease, border-color 0.2s ease, background 0.3s ease;
 }
 
 .hud-label {
