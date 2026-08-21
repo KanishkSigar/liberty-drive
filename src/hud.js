@@ -3,7 +3,8 @@
 
 export class HUD {
     constructor() {
-        this.currentTheme = 'gold'; // gold, vice, emerald
+        this.currentTheme = 'gold';
+        this.elements = {}; // gold, vice, emerald
     }
 
     toggleTheme(audio) {
