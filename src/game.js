@@ -20,6 +20,7 @@ import { WeaponManager } from './weapons.js';
 import { RoadblockManager } from './roadblocks.js';
 import { HelicopterManager } from './heli.js';
 import { StuntRampManager } from './ramps.js';
+import { TrafficLightManager } from './trafficlights.js';
 import { AudioManager } from './audio.js';
 
 /* ── Mission definitions ── */
