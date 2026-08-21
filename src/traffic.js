@@ -96,6 +96,12 @@ export class TrafficManager {
         return npc;
     }
 
+    isRedSignalNear(x, z, state) {
+        if (state !== 'RED') return false;
+        // Intersection check
+        return false;
+    }
+
     update(dt) {
         const total = this.city.gridN * this.city.step;
         const half = total / 2;
