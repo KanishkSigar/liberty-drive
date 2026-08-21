@@ -7,6 +7,7 @@ export class TrafficLightManager {
         this.city = city;
         this.signals = [];
         this.timer = 0;
+        this._updateLenses();
         this.state = 'GREEN'; // GREEN, YELLOW, RED
         this._buildSignals();
     }
