@@ -66,7 +66,7 @@ export class TrafficLightManager {
         this.timer += dt;
 
         let prevState = this.state;
-        if (this.timer < 10.0) {
+        if (this.timer < 12.0) {
             this.state = 'GREEN';
         } else if (this.timer < 13.0) {
             this.state = 'YELLOW';
