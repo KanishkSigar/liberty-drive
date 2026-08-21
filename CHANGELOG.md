@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.9.0 — Interactive Traffic Signals & HUD Color Themes
+- Synchronized 3-Stage Traffic Lights (`src/trafficlights.js`) with emissive Red, Amber, and Green lenses
+- Traffic Signal click audio synthesizer (`playSignalClick`)
+- Customizable Retro HUD Color Themes (`T` key): Classic Gold, Vice Magenta, and Emerald Green
+- Theme Switch Chime audio synthesizer (`playThemeSwitch`)
+- Expanded particle capacity buffer to 800 units and skid decals to 200 ribbons
+
 ## v1.8.0 — Mega Stunt Ramps & Nitrous Purge Overhaul
 - Mega Stunt Ramps (`src/ramps.js`) placed across Portland Pier, Heights Alley, and Harbor Bridge with hazard chevrons
 - Ramp launch swoosh audio synthesizer (`playRampLaunch`)
