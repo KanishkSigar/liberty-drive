@@ -238,6 +238,10 @@ class Game {
                     this.audio.playHorn();
                     this.wanted.addHeat(2);
                 }
+                if (this.input.wasJustPressed('theme')) {
+                    const newTheme = this.hud.toggleTheme(this.audio);
+                    this.hud.showToast('HUD THEME: ' + newTheme.toUpperCase(), 'info');
+                }
                 if (this.input.wasJustPressed('radio')) {
                     if (!this.radio.ctx && this.audio.ctx) this.radio.setAudioContext(this.audio.ctx);
                     const station = this.radio.toggleStation();
