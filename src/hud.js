@@ -84,12 +84,20 @@ export class HUD {
         else if (speed < -0.1) g = 'R';
         else if (speed > 100) g = '5';
         else if (speed > 70) g = '4';
+    updateGear(speed) {
+        if (!this.elements.gear) return;
+        let g = '1';
+        if (speed === 0) g = 'N';
+        else if (speed < -0.1) g = 'R';
+        else if (speed > 100) g = '5';
+        else if (speed > 70) g = '4';
         else if (speed > 45) g = '3';
         else if (speed > 20) g = '2';
         this.elements.gear.textContent = g;
     }
 
     updateSpeed(mph) {
+        if (!this.elements.speed) return;
         this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
         if (mph > 120) {
             this.elements.speed.style.color = '#ff3344';
@@ -99,10 +107,9 @@ export class HUD {
             this.elements.speed.style.textShadow = 'none';
         }
     }
-        this.elements.speed.innerHTML = mph + ' <small>MPH</small>';
-    }
 
     updateTime(seconds) {
+        if (!this.elements.time) return;
         const el = this.elements.time;
         el.textContent = Math.ceil(seconds);
         if (seconds < 10) {
@@ -116,23 +123,14 @@ export class HUD {
             el.style.textShadow = '0 0 8px rgba(240,197,64,0.4)';
         }
     }
-        const el = this.elements.time;
-        el.textContent = Math.ceil(seconds);
-        if (seconds < 10) el.style.color = '#ff4444';
-        else if (seconds < 20) el.style.color = '#ffaa44';
-        else el.style.color = '#f0c540';
-    }
 
     updateMission(title, distance) {
+        if (!this.elements.mission) return;
         if (distance !== undefined) {
             this.elements.mission.innerHTML = `${title} &bull; <span class="dist-badge">${distance}m</span>`;
         } else {
             this.elements.mission.textContent = title;
         }
-    }
-        this.elements.mission.textContent = distance !== undefined
-            ? title + ' - ' + distance + 'm'
-            : title;
     }
 
     updateMissionCount(current, total) {
