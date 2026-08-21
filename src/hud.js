@@ -4,7 +4,17 @@
 export class HUD {
     constructor() {
         this.currentTheme = 'gold';
-        this.elements = {}; // gold, vice, emerald
+        this.elements = {
+            speed: document.getElementById('txt-speed'),
+            time: document.getElementById('txt-time'),
+            mission: document.getElementById('txt-mission'),
+            missionNum: document.getElementById('txt-mission-num'),
+            gear: document.getElementById('txt-gear'),
+            healthBar: document.getElementById('hud-health-bar'),
+            rpmBar: document.getElementById('hud-rpm-bar'),
+            nitroBar: document.getElementById('hud-nitro-bar'),
+            clock: document.getElementById('txt-clock')
+        };
     }
 
     toggleTheme(audio) {
@@ -32,20 +42,6 @@ export class HUD {
             root.style.setProperty('--radar-border', 'rgba(242,197,64,0.8)');
             root.style.setProperty('--glass-border', 'rgba(240,197,64,0.15)');
         }
-    }
-    constructor() {
-        this.elements = {
-            speed: document.getElementById('txt-speed'),
-            time: document.getElementById('txt-time'),
-            mission: document.getElementById('txt-mission'),
-            missionNum: document.getElementById('txt-mission-num'),
-            gear: document.getElementById('txt-gear'),
-            healthBar: document.getElementById('hud-health-bar'),
-            rpmBar: document.getElementById('hud-rpm-bar'),
-            nitroBar: document.getElementById('hud-nitro-bar'),
-            clock: document.getElementById('txt-clock'),
-            gear: document.getElementById('txt-gear'),
-        };
     }
 
     updateArmor(healthRatio) {
