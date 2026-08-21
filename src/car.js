@@ -32,7 +32,7 @@ export class Car {
         this.tiresPopped = false;
         this.nitro = 100;
         this.maxNitro = 100;
-        this.nitroRegenRate = 15;
+        this.nitroRegenRate = 16;
         this.isBoosting = false;
         this.hd = 5.2;
 
