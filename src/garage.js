@@ -19,7 +19,7 @@ export const VEHICLE_ROSTER = [
         desc: 'High acceleration sports car with crimson red neon.',
         color: 0xc82020,
         underglow: 0xff2255,
-        topSpeed: 164,
+        topSpeed: 166,
         accelForce: 128,
         steerRate: 3.7,
         armor: 80
